@@ -1,6 +1,6 @@
 ## 📚 Projet de Visualisation de données: "OVNIs - À la recherche de l'inexpliqué" 👽
 
-## ## 🔍 Contexte
+## 🔍 Contexte
 Le phénomène des OVNIs - *Objets Volants Non Identifiés* - fascine depuis des décennies. Entre faits avérés, témoignages troublants et théories du complot, les observations d’OVNIs suscitent curiosité et scepticisme. Notre projet vise à explorer ces signalements grâce à une visualisation de données immersive et interactive.
 
 ## 📰 Description
