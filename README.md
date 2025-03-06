@@ -24,10 +24,18 @@ Notre défi est de proposer une visualisation percutante tout en conservant une 
 Nous utilisons des datasets issus de différentes sources publiques, notamment :
 - "UFO sightings scrubbed" sur [Kaggle](https://www.kaggle.com/datasets/akhil06022004/ufo-sightings-scrubbed)
 - "UFO sightings" sur [Kaggle](https://www.kaggle.com/datasets/NUFORC/ufo-sightings)
+- "ALIENS / ARRIVE" sur [GitHub](https://beitongt.github.io/Lab3/)
+- "Visualization des observations d'OVNI : Suivi des observations d'OVNI aux États-Unis" sur [Kanaries](https://docs.kanaries.net/fr/gallery/scatterplot__heatmap/ufo-sightings)
+- "UFO Sightings of 2016: A Recreation of a John Nelson Infographic" sur [The Flerlage Twins](https://www.flerlagetwins.com/2017/02/ufo-sightings-of-2016-recreation-of_99.html)
+- "UFO Sightings From 1910 to 2014 in United States" sur [Absent Data](https://absentdata.com/tableau/ufo-sightings-1910-2014-united-states/)
+
+
 
 ## 🎓 Études
 Ce projet est effectué dans le cadre d'un cours de visualisation de données en deuxième année de *Bachelor en Ingénierie des médias* à la HEIG-VD.
 
 Consignes de ce projet : [GitHub COMEM-VisualDon](https://github.com/MediaComem/comem-visualdon/tree/main/projet)
+
+Projet de visualisation de données sur les OVNIs effectué par d'autres étudiants, en deuxième année de *Bachelor en Ingénierie des médias*, en 2022: [GitHub VisualDon-Project-UFO](https://github.com/Meryl-D/VisualDon-Project-UFO)
 
 ## 🚀 Prêt à explorer les mystères des OVNIs ? Suivez-nous dans cette aventure ! 👽
