@@ -30,12 +30,18 @@ Nous utilisons des datasets issus de différentes sources publiques, notamment :
 - "UFO Sightings From 1910 to 2014 in United States" sur [Absent Data](https://absentdata.com/tableau/ufo-sightings-1910-2014-united-states/)
 
 
+## 📝 Wireframe
+Nous avons réalisé nos maquettes sur Figma afin d’avoir une première vision du projet. Les contenus ne sont pas définitifs ; ils servent uniquement à donner une idée de la mise en page et du design. De plus, la complexité possible du projet n’a pas encore été prise en compte dans cette version.  
+
+Voici les liens de nos maquettes :
+- [Design](https://www.figma.com/design/zN7xi0LrHFoS2dHaD4Y7W9/VisualDon-OVNI-Wireframe?node-id=0-1&t=VWqJnLJRsLW8517S-1)
+- [Prototype](https://www.figma.com/proto/zN7xi0LrHFoS2dHaD4Y7W9/VisualDon-OVNI-Wireframe?page-id=0%3A1&node-id=1-2&viewport=141%2C512%2C0.26&t=KoSiUopIxZxr0NAZ-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A2)
 
 ## 🎓 Études
 Ce projet est effectué dans le cadre d'un cours de visualisation de données en deuxième année de *Bachelor en Ingénierie des médias* à la HEIG-VD.
 
 Consignes de ce projet : [GitHub COMEM-VisualDon](https://github.com/MediaComem/comem-visualdon/tree/main/projet)
 
-Projet de visualisation de données sur les OVNIs effectué par d'autres étudiants, en deuxième année de *Bachelor en Ingénierie des médias*, en 2022: [GitHub VisualDon-Project-UFO](https://github.com/Meryl-D/VisualDon-Project-UFO)
+Projet de visualisation de données sur les OVNIs effectué par d'autres étudiants, en deuxième année de *Bachelor en Ingénierie des médias*, en 2022 : [GitHub VisualDon-Project-UFO](https://github.com/Meryl-D/VisualDon-Project-UFO)
 
 ## 🚀 Prêt à explorer les mystères des OVNIs ? Suivez-nous dans cette aventure ! 👽
