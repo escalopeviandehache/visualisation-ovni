@@ -1,0 +1,30 @@
+{
+  "name": "visualisation-ovni",
+  "version": "1.0.0",
+  "description": "Le phénomène des OVNIs - *Objets Volants Non Identifiés* - fascine depuis des décennies. Entre faits avérés, témoignages troublants et théories du complot, les observations d’OVNIs suscitent curiosité et scepticisme. Notre projet vise à explorer ces signalements grâce à une visualisation de données immersive et interactive.",
+  "main": "index.js",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/escalopeviandehache/visualisation-ovni.git"
+  },
+  "keywords": [
+    "OVNI"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/escalopeviandehache/visualisation-ovni/issues"
+  },
+  "homepage": "https://github.com/escalopeviandehache/visualisation-ovni#readme",
+  "devDependencies": {
+    "vite": "^6.2.2"
+  }
+}
