@@ -1,1 +1,3 @@
-console.log("Bijan Bell")
+import '/section/ufo-type-graph-section.js';
+
+ 

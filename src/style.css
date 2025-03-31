@@ -1,0 +1,39 @@
+@import 'css/ufo-type-graph.css';
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0a0a0a;
+    color: white;
+    text-align: center;
+}
+
+header {
+    background-color: #1a1a1a;
+    padding: 20px;
+    font-size: 24px;
+}
+
+h1, h2 {
+    color: #66ffcc;
+}
+
+section {
+    padding: 20px;
+    border-bottom: 1px solid #333;
+}
+
+.heatmap img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+footer {
+    background-color: #1a1a1a;
+    padding: 10px;
+    font-size: 14px;
+}
+
+
