@@ -26,5 +26,8 @@
   "homepage": "https://github.com/escalopeviandehache/visualisation-ovni#readme",
   "devDependencies": {
     "vite": "^6.2.2"
+  },
+  "dependencies": {
+    "leaflet": "^1.9.4"
   }
 }
