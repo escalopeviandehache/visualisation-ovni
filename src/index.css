@@ -1,7 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
 @import 'css/ufo-type-graph.css';
 
+@font-face {
+    font-family: 'DeliriumNcv';
+    src: url('./assets/fonts/DeliriumNcv-Vm5e.ttf') format('opentype'); /* Ajuste le chemin si nécessaire */
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Inter', sans-serif; /* s'assure qu'elle utilise bien la police importée */
     margin: 0;
     padding: 0;
     background-color: #0a0a0a;
@@ -10,13 +18,14 @@ body {
 }
 
 header {
-    background-color: #1a1a1a;
+    font-family: DeliriumNcv, sans-serif;
+    background-color: #000000;
     padding: 20px;
-    font-size: 24px;
+    font-size: 45px;
 }
 
 h1, h2 {
-    color: #66ffcc;
+    color: #13c287;
 }
 
 section {
@@ -36,5 +45,4 @@ footer {
     padding: 10px;
     font-size: 14px;
 }
-
 
