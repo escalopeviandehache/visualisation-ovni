@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/escalopeviandehache/visualisation-ovni#readme",
   "devDependencies": {
+    "@rollup/plugin-dsv": "^3.0.5",
     "vite": "^6.2.2"
   },
   "dependencies": {
