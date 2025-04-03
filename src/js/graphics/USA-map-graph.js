@@ -42,4 +42,23 @@ export default function initializeUSAMap() {
         maxZoom: 10,
         gradient: gradient   // Appliquer le dégradé
     }).addTo(mapUSA);
+
+    // Ajouter un marqueur à la Zone 51 avec un popup
+    const zone51Coordinates = [37.2350, -115.8100]; // Coordonnées approximatives de la Zone 51
+    const zone51Popup = "La Zone 51 - Le mystère extraterrestre..."; // Texte du popup
+
+    // Créer une icône personnalisée avec une couleur
+    const customIcon = L.divIcon({
+        className: 'custom-icon', // Classe CSS pour l'icône
+        html: '<div style="background-color:rgb(6, 85, 25); width: 20px; height: 20px; border-radius: 50%; border: 2px solid #FFFFFF;"></div>', // Cercle rouge avec bordure blanche
+        iconSize: [40, 40],  // Taille de l'icône
+        iconAnchor: [15, 30], // Point d'ancrage de l'icône
+        popupAnchor: [0, -30] // Point d'ancrage du popup
+    });
+
+    // Ajouter le marqueur avec l'icône personnalisée
+    L.marker(zone51Coordinates, { icon: customIcon })
+        .addTo(mapUSA)
+        .bindPopup(zone51Popup) // Lier le texte du popup au marqueur
+        .openPopup(); // Ouvrir le popup immédiatement (facultatif)
 }
