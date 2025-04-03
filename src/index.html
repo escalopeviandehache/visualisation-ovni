@@ -29,12 +29,16 @@
 
     <section class="testimony">
         <h2>Témoignages</h2>
-        <div id="testimony-graph"></div>
+        <div id="testimony-graph">
+
+        </div>
     </section>
 
 
     <section class="definition">
         <h2>Qu'est-ce qu'un OVNI ?</h2>
+        <div id="definition">
+        </div>
     </section>
 
 
@@ -42,36 +46,6 @@
         <h2>Carte de chaleur des OVNIs aux États-Unis</h2>
         <div id="heatmap-usa">
             <h2>La Zone 51</h2>
-           
-            <script>
-
-            console.log("Initialisation de la carte...");
-            const map = L.map('heatmap-usa').setView([37.7749, -119.4194], 5);
-            console.log("Carte créée avec succès !");
-
-                // // Initialise la carte sur le bon conteneur
-                // const map = L.map('heatmap-usa').setView([37.7749, -119.4194], 5);
-            
-                // Ajoute OpenStreetMap comme fond de carte
-                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                    attribution: '&copy; OpenStreetMap contributors'
-                }).addTo(map);
-            
-                // Données de la heatmap (ajoute les tiennes si besoin)
-                const heatData = [
-                    [37.7749, -122.4194, 0.5], // San Francisco
-                    [34.0522, -118.2437, 0.8], // Los Angeles
-                    [40.7128, -74.0060, 0.9]  // New York
-                ];
-            
-                // Ajout de la heatmap à la carte
-                L.heatLayer(heatData, {
-                    radius: 20,
-                    blur: 15,
-                    maxZoom: 10
-                }).addTo(map);
-            </script> 
-
 
         </div>
     </section>
@@ -81,28 +55,34 @@
 
     <section class="heatmapWorld">
         <h2>Carte de chaleur des OVNIs dans le monde</h2>
-        <div id="heatmap-world"></div>
+        <div id="heatmap-world">
+
+        </div>
     </section>
 
 
     <section class="ufo-type">
         <h2>Répartition des types d'OVNIs</h2>
-        <div id="ufo-type-graph"></div>
+        <div id="ufo-type-graph">
+            
+        </div>
     </section>
 
 
     <section class="anecdoteFilms">
         <h2>Films et OVNIs</h2>
-        <div id="anecdote-films"></div>
+        <div id="anecdote-films">
+        </div>
     </section>
 
 
     <section class="typesApparitions">
         <h2>Différents types d'apparitions</h2>
-        <div id="types-apparitions"></div>
+        <div id="types-apparitions">
+            
+        </div>
     </section>
 
 
 </body>
 </html>
-
