@@ -43,45 +43,32 @@ export default function initializeUSAMap() {
         gradient: gradient   // Appliquer le dégradé
     }).addTo(mapUSA);
 
-    // Modifier la création du popup pour inclure du HTML personnalisé
-    const zone51Coordinates = [37.2350, -115.8100]; // Coordonnées approximatives de la Zone 51
-    const zone51Popup = `
-        <div class="card">
-    <div class="movie">
-        <h2>Zone 51</h2>
-        <img src="https://yourimageurl.com/zone51.jpg" alt="Zone 51" class="movie-poster" />
-        <div class="info">
-            <h3 class="title">Nevada</h3>
-            <p class="prod">
-                <span class="release-year">37.25436354487456, -115.78680345914648</span>
-            </p>
-            <p class="synopsis">
-                La Zone 51 est une base militaire ultra-secrète située dans le désert du Nevada, aux États-Unis. Officiellement, il s'agit d'un site d'essais pour des avions et des technologies militaires avancées, mais son existence même est longtemps restée classifiée par le gouvernement américain. Son aura de mystère et son accès strictement interdit ont alimenté de nombreuses théories du complot, notamment sur la présence d'ovnis et de technologies extraterrestres.
-            </p>
-            <p class="synopsis">
-                L’association entre la Zone 51 et les extraterrestres remonte aux années 1950 et 1960, en pleine guerre froide, lorsque des témoins ont signalé avoir vu des objets volants non identifiés dans le ciel. En réalité, ces observations étaient souvent liées aux tests d'avions espions comme l'U-2 ou le SR-71 Blackbird, mais la culture populaire s’est rapidement emparée du mythe. L’affaire Roswell a renforcé cette réputation : certains pensent que les débris et les corps supposément extraterrestres récupérés en 1947 y ont été analysés.
-            </p>
-            <p class="synopsis">
-                Officiellement, la Zone 51 n’est qu’un site de développement militaire avancé. Officieusement, elle continue d'alimenter les fantasmes sur la vie extraterrestre et les complots gouvernementaux. Vérité cachée ou simple légende urbaine ? Le mystère demeure.
-            </p>
-        </div>
-    </div>
-</div>
-    `;
+    // Ajouter un marqueur pour la Zone 51
+    const zone51Marker = L.marker([37.25436354487456, -115.78680345914648]).addTo(mapUSA);
 
-    // Créer une icône personnalisée avec une couleur
-    const customIcon = L.divIcon({
-        className: 'custom-icon', // Classe CSS pour l'icône
-        html: '<div style="background-color:rgb(6, 85, 25); width: 20px; height: 20px; border-radius: 50%; border: 2px solid #FFFFFF;"></div>', // Cercle rouge avec bordure blanche
-        iconSize: [40, 40],  // Taille de l'icône
-        iconAnchor: [15, 30], // Point d'ancrage de l'icône
-        popupAnchor: [0, -30] // Point d'ancrage du popup
+    // Ajouter un popup au marqueur, avec du contenu personnalisé et un style adapté
+    zone51Marker.on('click', function() {
+        const popupContent = `
+            <div class="custom-popup">
+                <h3 style="text-align: center; font-size: 1.5rem;">Zone 51</h3>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Nellis_AFB_Area_51.jpg" alt="Zone 51" style="width: 100%; border-radius: 6px; margin-bottom: 10px;" />
+                <p><strong>Location:</strong> Nevada</p>
+                <p><strong>Coordinates:</strong> 37.25436354487456, -115.78680345914648</p>
+                <p><strong>Description:</strong><br>
+                    La Zone 51 est une base militaire ultra-secrète située dans le désert du Nevada, aux États-Unis. Officiellement, il s'agit d'un site d'essais pour des avions et des technologies militaires avancées, mais son existence même est longtemps restée classifiée par le gouvernement américain. Son aura de mystère et son accès strictement interdit ont alimenté de nombreuses théories du complot, notamment sur la présence d'ovnis et de technologies extraterrestres.<br><br>
+                    L’association entre la Zone 51 et les extraterrestres remonte aux années 1950 et 1960, en pleine guerre froide, lorsque des témoins ont signalé avoir vu des objets volants non identifiés dans le ciel. En réalité, ces observations étaient souvent liées aux tests d'avions espions comme l'U-2 ou le SR-71 Blackbird, mais la culture populaire s’est rapidement emparée du mythe. L’affaire Roswell a renforcé cette réputation : certains pensent que les débris et les corps supposément extraterrestres récupérés en 1947 y ont été analysés.<br><br>
+                    Officiellement, la Zone 51 n’est qu’un site de développement militaire avancé. Officieusement, elle continue d'alimenter les fantasmes sur la vie extraterrestre et les complots gouvernementaux. Vérité cachée ou simple légende urbaine ? Le mystère demeure.
+                </p>
+            </div>
+        `;
+    
+        // Créer et afficher le popup en bas à gauche
+        L.popup({
+            closeButton: true,           // Pour ajouter un bouton de fermeture
+            className: 'custom-popup'    // Utilisation de la classe CSS personnalisée
+        })
+        .setLatLng([37.25436354487456, -115.78680345914648])
+        .setContent(popupContent)
+        .openOn(mapUSA);
     });
-
-    // Ajouter le marqueur avec l'icône personnalisée et le popup modifié
-    L.marker(zone51Coordinates, { icon: customIcon })
-        .addTo(mapUSA)
-        .bindPopup(zone51Popup) // Lier le texte du popup au marqueur
-        .openPopup(); // Ouvrir le popup immédiatement (facultatif)
 }
-
