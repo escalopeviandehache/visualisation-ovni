@@ -1,6 +1,8 @@
+import csvData from '../../../public/data/complete.csv'; // Import du fichier CSV
+
 export default function initializeUSAMap() {
     console.log("Initialisation de la carte...");
-    const mapUSA = L.map('heatmap-usa').setView([37.7749, -119.4194], 5);
+    const mapUSA = L.map('heatmap-usa').setView([37.7749, -119.4194], 5); // Vue centrée sur les États-Unis
     console.log("Carte créée avec succès !");
 
     // Ajoute OpenStreetMap comme fond de carte
@@ -8,12 +10,20 @@ export default function initializeUSAMap() {
         attribution: '&copy; OpenStreetMap contributors'
     }).addTo(mapUSA);
 
-    // Données de la heatmap
-    const heatData = [
-        [37.7749, -122.4194, 0.5], // San Francisco
-        [34.0522, -118.2437, 0.8], // Los Angeles
-        [40.7128, -74.0060, 0.9]  // New York
-    ];
+    // Filtrer les données CSV pour ne conserver que celles des États-Unis
+    const heatData = csvData
+        .filter(row => row.country === 'us') // Ne garder que les entrées avec country == 'us'
+        .map(row => {
+            const lat = parseFloat(row.latitude);
+            const lon = parseFloat(row.longitude);
+            const intensity = 0.5; // Définir l'intensité ou ajuster selon vos besoins
+            
+            // Vérifier que la latitude et la longitude sont valides
+            if (!isNaN(lat) && !isNaN(lon)) {
+                return [lat, lon, intensity]; // Formater les données pour la heatmap
+            }
+        })
+        .filter(item => item);  // Filtrer les éléments invalides
 
     // Ajout de la heatmap à la carte
     L.heatLayer(heatData, {
@@ -22,4 +32,3 @@ export default function initializeUSAMap() {
         maxZoom: 10
     }).addTo(mapUSA);
 }
-
