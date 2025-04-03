@@ -25,10 +25,21 @@ export default function initializeUSAMap() {
         })
         .filter(item => item);  // Filtrer les éléments invalides
 
-    // Ajout de la heatmap à la carte
+    // Définir un dégradé personnalisé pour la heatmap
+    const gradient = {
+        0.0: '#00FF00',    // Faible intensité = vert fluo
+        0.3: '#33FF33',    // Intensité faible à moyenne = vert plus clair
+        0.5: '#66FF66',    // Intensité moyenne = vert phosphorescent
+        0.7: '#99FF99',    // Intensité moyenne à élevée = vert acide
+        0.85: '#00FF99',   // Intensité élevée = vert néon
+        1.0: '#33FF99'     // Très forte intensité = vert électrique
+    };
+
+    // Ajout de la heatmap avec un gradient personnalisé à la carte
     L.heatLayer(heatData, {
         radius: 20,
         blur: 15,
-        maxZoom: 10
+        maxZoom: 10,
+        gradient: gradient   // Appliquer le dégradé
     }).addTo(mapUSA);
 }
