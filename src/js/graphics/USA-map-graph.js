@@ -5,9 +5,9 @@ export default function initializeUSAMap() {
     const mapUSA = L.map('heatmap-usa').setView([37.7749, -119.4194], 5); // Vue centrée sur les États-Unis
     console.log("Carte créée avec succès !");
 
-    // Ajoute OpenStreetMap comme fond de carte
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; OpenStreetMap contributors'
+    // Ajoute une carte avec un style sombre
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors, &copy; CartoDB',
     }).addTo(mapUSA);
 
     // Filtrer les données CSV pour ne conserver que celles des États-Unis
