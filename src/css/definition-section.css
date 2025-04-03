@@ -1,0 +1,48 @@
+.definition-container {
+    font-family: 'Courier New', monospace; /* Police type machine à écrire */
+    font-size: 22px; /* Taille du texte ajustable */
+    white-space: normal; /* Permet d'afficher tout le texte */
+    overflow: visible; /* Assure que tout le texte est visible */
+    width: 100%; /* Prendre toute la largeur disponible */
+    text-align: center; /* Centrer le texte horizontalement */
+    margin-top: 10px; /* Réduction de l'espacement au-dessus du texte */
+    padding: 8px; /* Espacement intérieur légèrement réduit */
+}
+
+@keyframes typing {
+    0% { width: 0; }
+    100% { width: 100%; }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+#definition-text {
+    display: inline-block;
+    overflow: visible; /* Assure que tout le texte est visible */
+    border-right: .15em solid black; /* Simule le curseur de la machine à écrire */
+    width: auto; /* Ajuste automatiquement la largeur au contenu */
+    animation: typing 5s steps(50) 1s 1 normal both, fadeIn 5s ease-in-out;
+    letter-spacing: 1px; /* Espacement entre les lettres */
+    line-height: 1.5; /* Espacement entre les lignes */
+    word-wrap: break-word; /* Permet de couper les mots si nécessaire */
+}
+
+.definition-container p {
+    opacity: 0; /* Cache initialement tous les paragraphes */
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+.definition-container p:nth-child(1) {
+    animation-delay: 1s; /* Premier paragraphe apparaît après 1 seconde */
+}
+
+.definition-container p:nth-child(2) {
+    animation-delay: 3s; /* Deuxième paragraphe apparaît après 3 secondes */
+}
+
+.definition-container p:nth-child(3) {
+    animation-delay: 5s; /* Troisième paragraphe apparaît après 5 secondes */
+}
