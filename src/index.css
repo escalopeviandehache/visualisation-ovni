@@ -7,10 +7,11 @@
 
 @font-face {
     font-family: 'DeliriumNcv';
-    src: url('./assets/fonts/DeliriumNcv-Vm5e.ttf') format('opentype'); /* Ajuste le chemin si nécessaire */
+    src: url('../assets/fonts/DeliriumNcv-Vm5e.ttf') format('opentype'); /* Ajuste le chemin si nécessaire */
     font-weight: normal;
     font-style: normal;
 }
+
 
 body {
     font-family: 'Inter', sans-serif; /* s'assure qu'elle utilise bien la police importée */
@@ -55,3 +56,115 @@ footer {
     height: 500px; /* Ajuste la hauteur si nécessaire */
 }
 
+
+/* 
+#space-shooter {
+    background: linear-gradient(135deg, #1f1f1f, #3e3e3e);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    color: white;
+    margin-top: 40px;
+    animation: fadeIn 1.5s ease-in-out;
+  }
+
+  .game-title {
+    font-size: 2.5rem;
+    color: #ff5722;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 20px;
+    animation: slideIn 1.5s ease-out;
+  }
+
+  .game-description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    opacity: 0;
+    animation: fadeInText 1.5s 1s forwards;
+  }
+
+  .game-link {
+    display: inline-block;
+    background-color: #ff5722;
+    color: white;
+    padding: 15px 25px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  .game-link:hover {
+    background-color: #e64a19;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Animation effects */
+  /* @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  @keyframes slideIn {
+    0% { transform: translateY(-50px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+
+  @keyframes fadeInText {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  } */
+
+  /* Responsive styles */
+  /* @media screen and (max-width: 768px) {
+    .game-title {
+      font-size: 2rem;
+    }
+
+    .game-description {
+      font-size: 1rem;
+    }
+
+    .game-link {
+      font-size: 1.2rem;
+    }
+  } */ */
+  #game-button {
+    display: inline-block;
+    background-color: #13c287; /* Vert lumineux adapté au thème */
+    color: white;
+    padding: 15px 30px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    border-radius: 30px;
+    font-family: 'DeliriumNcv', sans-serif; /* Utilisation de la police importée */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+    height: 60px; /* Ajuste la hauteur du bouton */
+    width: 200px; /* Ajuste la largeur du bouton */
+}
+
+#game-button:hover {
+    background-color: #13c287; /* Changement de couleur au survol */
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.6);
+}
+
+#game-button:focus {
+    outline: none;
+}
+
+#game-button:active {
+    transform: translateY(0);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
