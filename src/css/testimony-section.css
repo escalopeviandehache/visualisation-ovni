@@ -1,0 +1,87 @@
+.slider-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+  }
+  
+  .slide {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    transition: all 0.5s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .slide.active {
+    left: 0;
+  }
+  
+  .image-overlay {
+    position: relative;
+    text-align: center;
+  }
+  
+  .image-overlay img {
+    max-height: 80%;
+    max-width: 90%;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .image-overlay h2 {
+    font-family: 'DeliriumNcv';
+    src: url('./assets/fonts/DeliriumNcv-Vm5e.ttf') format('opentype'); /* Ajuste le chemin si nécessaire */
+    font-weight: normal;
+    position: absolute;
+    top: 1%;
+    left: 25%;
+    transform: translateX(-50%);
+    color: rgb(9, 109, 21);
+    font-size: 55px;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    padding: 1rem 2rem;
+    border-radius: 8px;
+  }
+  
+  .background-content {
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .text-content {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 80%;
+    text-align: center;
+  }
+  
+  .slider-controls {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+  }
+  
+  .slide-btn {
+    background-color: rgba(0,0,0,0.5);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 50%;
+  }

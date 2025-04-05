@@ -6,7 +6,9 @@
     <title>Visualisation-OVNIs</title>
     <script src="index.js" type="module" defer></script>
     <link rel="stylesheet" href="index.css"/>
+    <script src="/src/space-shooter/app.js"></script>
 
+    
     <!-- Load d3.js & color scale-->
 <script src="https://d3js.org/d3.v4.js"></script>
 <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
@@ -19,6 +21,9 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
+<script src="slider.js" defer></script>
+
+
 
 
 </head>
@@ -30,14 +35,37 @@
     </header>
 
     <section class="testimony">
-      <h2>Témoignages</h2>
-      <div id="testimony-graph">
-        <p>
-          "Maurice Masse aperçoit une soucoupe volante posée sur six pieds avec
-          deux occupants d'apparence étrange. L'un d'eux pointe un objet
-          cylindrique vers lui, le faisant perdre connaissance. À son réveil,
-          l'engin a disparu, laissant une cuvette et des plantes brûlées."
-        </p>
+      <div class="slider-container">
+        <div class="slide" id="slide-1">
+          <div class="image-overlay">
+            <h2>Le témoignage de Maurice Masse</h2>
+            <img src="/img/maurice-masse-1.jpg" alt="Maurice Masse" />
+          </div>
+        </div>
+        <div class="slide" id="slide-2">
+          <div class="background-content" style="background-image: url('/img/maurice-masse-3.jpg');">
+            <div class="text-content" style="text-align: center; position: absolute; top: 0; left: 50%; transform: translateX(-50%);">
+              <blockquote>
+                En juillet 1965, Maurice Masse, cultivateur à Valensole, observe dans son champ de lavande un engin ovoïde reposant sur six pieds. Il aperçoit deux êtres humanoïdes de petite taille, à la tête disproportionnée et aux yeux énormes. L’un d’eux pointe un tube vers lui, le paralysant sur place. Masse perd connaissance pendant environ dix minutes. À son réveil, l'engin s’est volatilisé, ne laissant derrière lui qu’une dépression circulaire, des plants de lavande écrasés, et un sol durci comme du ciment. Les autorités locales et la gendarmerie ont confirmé ces étranges marques au sol.
+              </blockquote>
+              <p class="author">– Maurice Masse, témoignage du 1er juillet 1965</p>
+            </div>
+          </div>
+        </div>
+        <div class="slide" id="slide-3">
+          <div class="background-content-2" style="background-image: url('/img/valensole65.jpg');">
+            <div class="text-content">
+              <img src="/img/valensole65.jpg" alt="Affiche du long-métrage intitulé Valensole 1965" />
+
+              <p>En 2025, cette histoire fascinante fait l’objet d’un long-métrage intitulé <strong>"Valensole 1965"</strong>, réalisé par Dominique Filhol. Le film revient sur l’un des témoignages d’OVNI les plus marquants en France, mêlant reconstitution historique et atmosphère mystérieuse.</p>
+              <a href="https://www.hauteprovenceinfo.com/actualite-38904-valensole-65-l-histoire-incroyable-de-maurice-masse-au-cinema" target="_blank">Voir l'article sur le film</a>
+            </div>
+          </div>
+        </div>
+        <div class="slider-controls">
+          <button class="slide-btn prev-slide" aria-label="Slide précédente">&#10094;</button>
+          <button class="slide-btn next-slide" aria-label="Slide suivante">&#10095;</button>
+        </div>
       </div>
     </section>
 
@@ -58,16 +86,11 @@
     </section>
 
     <section class="heatmapUSA">
-      <h2>Carte de chaleur des OVNIs aux États-Unis</h2>
+      <h2>Heatmap</h2>
       <div id="heatmap-usa">
-        <h2>La Zone 51</h2>
       </div>
     </section>
 
-    <section class="heatmapWorld">
-      <h2>Carte de chaleur des OVNIs dans le monde</h2>
-      <div id="heatmap-world"></div>
-    </section>
 
     <section class="ufo-type">
       <h2>Répartition des types d'OVNIs</h2>
@@ -92,5 +115,13 @@
       <p>Les OVNIs sphériques apparaissent souvent sous forme d’orbes lumineuses de différentes couleurs. Elles se déplacent à grande vitesse ou restent stationnaires avant de disparaître brusquement. Ces phénomènes sont parfois assimilés aux « Foo Fighters », des lumières observées par les pilotes durant la Seconde Guerre mondiale.</p>
       <div id="types-apparitions"></div>
     </section>
-  </body>
+
+   
+        <section id="space-shooter">
+          <h2>Jeu de tir</h2>
+          <div id="game-container"></div> <!-- Le conteneur pour le jeu -->
+            <iframe src="/src/space-shooter/spaceshooter.html" width="800" height="600"></iframe>
+          </section>
+
+    </body>
 </html>
