@@ -82,12 +82,55 @@ var moverocks = setInterval(() => {
       );
       //475 => boardheight - rockheight + 25
       if (rocktop >= 475) {
-        alert("Game Over");
+        const gameOverMessage = document.createElement("div");
+        gameOverMessage.id = "game-over";
+        gameOverMessage.innerHTML = `
+          <p>Game Over!</p>
+          <button id="replay-button">Replay</button>
+        `;
+        gameOverMessage.style.position = "absolute";
+        gameOverMessage.style.top = "50%";
+        gameOverMessage.style.left = "50%";
+        gameOverMessage.style.transform = "translate(-50%, -50%)";
+        gameOverMessage.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
+        gameOverMessage.style.color = "white";
+        gameOverMessage.style.padding = "20px";
+        gameOverMessage.style.borderRadius = "10px";
+        gameOverMessage.style.textAlign = "center";
+        gameOverMessage.style.zIndex = "1000";
+        document.body.appendChild(gameOverMessage);
+
         clearInterval(moverocks);
-        window.location.reload();
+        clearInterval(generaterocks);
+
+        const replayButton = document.getElementById("replay-button");
+        replayButton.addEventListener("click", () => {
+          location.reload(); // Reload the page to restart the game
+        });
       }
 
       rock.style.top = rocktop + 25 + "px";
     }
   }
 }, 450);
+document.addEventListener("DOMContentLoaded", () => {
+  const playButton = document.getElementById("play-button");
+  const board = document.getElementById("board");
+  const points = document.getElementById("points");
+
+  playButton.addEventListener("click", () => {
+    playButton.style.display = "none"; // Cache le bouton Play
+    board.style.display = "block"; // Affiche le plateau de jeu
+    points.style.display = "block"; // Affiche les points
+  });
+
+  // Increase movement speed for left and right arrow keys
+  window.addEventListener("keydown", (e) => {
+    var left = parseInt(window.getComputedStyle(jet).getPropertyValue("left"));
+    if (e.key == "ArrowLeft" && left > 0) {
+      jet.style.left = left - 20 + "px"; // Move faster to the left
+    } else if (e.key == "ArrowRight" && left <= 460) {
+      jet.style.left = left + 20 + "px"; // Move faster to the right
+    }
+  });
+});

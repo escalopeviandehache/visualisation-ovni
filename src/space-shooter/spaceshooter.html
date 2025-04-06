@@ -6,6 +6,13 @@
     <title>Space Shooter</title>
   </head>
   <style>
+    @font-face {
+      font-family: 'DeliriumNcv';
+      src: url('../assets/fonts/DeliriumNcv-Vm5e.ttf') format('opentype'); /* Ajuste le chemin si nécessaire */
+      font-weight: normal;
+      font-style: normal;
+    }
+
     body {
       width: 100%;
       overflow: hidden;
@@ -20,6 +27,7 @@
       border: 2px solid white;
       background-color: black;
       overflow: hidden;
+      display: none; /* Caché par défaut */
     }
 
     #jet {
@@ -54,20 +62,60 @@
       background-repeat: no-repeat;
     }
     #points {
+      font-family: DeliriumNcv;
       position: absolute;
       top: 0px;
       margin: 40px;
       opacity: 0.7;
-      font-size: 10em;
+      font-size: 100px;
       color: white;
+      display: none; /* Caché par défaut */
     }
+
+    #play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px 40px;
+      font-size: 1.5em;
+      color: white;
+      background-color: #007bff;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    #play-button:hover {
+      background-color: #0056b3;
+    }
+
+    #replay-button{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px 40px;
+      font-size: 1.5em;
+      color: white;
+      background-color: #007bff;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    #replay-button:hover {
+      background-color: #0056b3;
+    }
+
+
   </style>
-  <script src="app.js" defer></script>
+  <script src="app.js" type="module"></script>
   <body>
+    <button id="play-button">Play</button>
     <div id="board">
       <div class="rocks"></div>
       <div id="jet"></div>
     </div>
-    <div id="points">0</div>
+    <div id="points"> 0</div>
   </body>
 </html>
