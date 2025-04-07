@@ -13,6 +13,11 @@
     font-style: normal;
 }
 
+html, body {
+  width: 100%;
+  overflow-x: hidden; /* Empêche le défilement horizontal */
+}
+
 
 body {
     font-family: 'Inter', sans-serif; /* s'assure qu'elle utilise bien la police importée */

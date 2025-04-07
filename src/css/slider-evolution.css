@@ -1,6 +1,7 @@
 .evolution-slider {
     width: 100%;
-    margin:  auto;
+    margin-left: 30px;
+    margin-right: 70px;
     overflow: hidden; /* Cache les slides en dehors du conteneur */
     position: relative;
     background: #000000;
@@ -83,12 +84,15 @@
 
   .slider-container1 {
     position: relative;
+    
     width: 100%;
     height: 300px; /* Ajuste la hauteur selon ton design */
     overflow: hidden;
   }
   
   .slide-evo {
+    margin-left: 30px;
+    margin-right: 30px;
     position: absolute;
     top: 0;
     left: 100%;
@@ -98,6 +102,8 @@
   }
   
   .slide-evo.active {
+    margin-left: 40px;
+    margin-right: 40px;
     left: 0;
     opacity: 1;
   }
