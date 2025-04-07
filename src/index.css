@@ -102,7 +102,7 @@ footer {
   max-width: 40%; /* Réduit la taille des images */
   height: auto;
   border-radius: 10px;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
   flex-shrink: 0; /* Empêche les images de rétrécir */
 }
 
@@ -111,7 +111,7 @@ footer {
 }
 
 .img-crop-circles::-webkit-scrollbar-thumb {
-  background-color: #13c287;
+  background-color: #000000;
   border-radius: 4px;
 }
 
