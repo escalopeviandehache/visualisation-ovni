@@ -1,0 +1,67 @@
+#anecdote-films {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #222;
+    padding: 30px 0;
+}
+
+.films-gallery {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 275px;
+    padding: 20px;
+    width: 90%;
+    max-width: 1650px;
+    scrollbar-width:auto;
+    scrollbar-color: #13c287 #222;
+}
+
+/* Pour les navigateurs Webkit (Chrome, Safari) */
+.films-gallery::-webkit-scrollbar {
+    height: 8px;
+}
+
+.films-gallery::-webkit-scrollbar-track {
+    background: #222;
+}
+
+.films-gallery::-webkit-scrollbar-thumb {
+    background-color: #555;
+    border-radius: 10px;
+}
+
+.film-item {
+    flex: 0 0 auto;
+    width: 220px; /* Largeur fixe pour chaque affiche */
+    transition: transform 0.3s ease;
+}
+
+.film-item:hover {
+    transform: scale(1.05);
+}
+
+.film-item img {
+    width: 460px;
+    height: 700px; /* Hauteur fixe pour harmoniser les affiches */
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Style pour les appareils mobiles */
+@media (max-width: 768px) {
+    .films-gallery {
+        width: 95%;
+        padding: 10px;
+    }
+    
+    .film-item {
+        width: 150px;
+    }
+    
+    .film-item img {
+        height: 225px;
+    }
+}

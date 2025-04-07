@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #0a0a0a;
+    background-image: url('../img/simpsonAlien.jpg');
+}
+.film-container {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+.film-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.film-poster {
+    width: 300px;
+    margin-right: 30px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.film-info h1 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #333;
+}
+.film-info p {
+    margin: 5px 0;
+    color: #666;
+}
+.film-description {
+    line-height: 1.6;
+    margin-top: 20px;
+}
+.back-button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+.back-button:hover {
+    background-color: #555;
+}
+.film-year {
+    font-weight: bold;
+}
+.film-director {
+    font-style: italic;
+}
+.error-message {
+    color: red;
+    text-align: center;
+    padding: 50px;
+}

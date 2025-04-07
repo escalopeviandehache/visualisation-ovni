@@ -1,5 +1,4 @@
-// Définition de l'objet JavaScript à partir des données JSON
-const filmsData = {
+export const filmsData = {
     "films": [
       {
         "titre": "Star Wars",
