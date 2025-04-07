@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
+
+
 .typesApparitions {
     padding: 2rem 1rem;
     background-color: #121212;
@@ -6,7 +9,7 @@
   }
   
   .typesApparitions h2 {
-    font-family: 'Courier New', monospace;
+    font-family: 'Inter', sans-serif; /* s'assure qu'elle utilise bien la police importée */
     margin-bottom: 1rem;
     font-size: 1.8rem;
     text-align: center;
@@ -32,14 +35,14 @@
   }
   
   .apparition-card h3 {
-    font-family: 'Courier New', monospace;
+    font-family: 'Inter', sans-serif; /* s'assure qu'elle utilise bien la police importée */
     margin-top: 0.5rem;
     font-size: 1.2rem;
     color: #13c287;
   }
   
   .apparition-card p {
-    font-family: 'Courier New', monospace;
+    font-family: 'Inter', sans-serif; /* s'assure qu'elle utilise bien la police importée */
     font-size: 0.95rem;
     line-height: 1.4;
   }
