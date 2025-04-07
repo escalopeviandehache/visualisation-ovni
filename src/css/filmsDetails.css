@@ -14,9 +14,10 @@ body {
     -webkit-backdrop-filter: blur(10px);
 }
 .film-header {
-    display: flex;
-    align-items: center;
     margin-bottom: 30px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
 }
 .film-poster {
     width: 300px;
