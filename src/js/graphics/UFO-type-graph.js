@@ -1,175 +1,110 @@
-import '../data/processed_data'
+import * as d3 from 'd3';
+import csvData from '../../../public/data/complete.csv';
 
 export default function UFOTypeGraph() {
-  var margin = { top: 20, right: 0, bottom: 50, left: 50 }; // Ajout de marges pour mieux espacer les éléments
-  var width = window.innerWidth - margin.left - margin.right;
-  var height = 400 - margin.top - margin.bottom;
+  const margin = { top: 20, right: 30, bottom: 30, left: 40 },
+    width = 900 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
 
-  // Vérification des valeurs de width et height
-  if (isNaN(width) || isNaN(height) || width <= 0 || height <= 0) {
-    console.error('Invalid width or height values');
-    return;
-  }
-
-  // Ajouter l'élément svg au body de la page
-  var svg = d3.select("#ufo-type-graph")
+  const svg = d3.select("#ufo-type-graph")
     .append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
     .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    .attr("transform", `translate(${margin.left},${margin.top})`);
 
-  // Données de formes d'OVNIs
-  var data = [
-    { "year": 2000, "soucoupe": 12, "cigare": 8, "triangle": 15, "sphere": 10 },
-    { "year": 2001, "soucoupe": 18, "cigare": 5, "triangle": 20, "sphere": 12 },
-    { "year": 2002, "soucoupe": 20, "cigare": 7, "triangle": 25, "sphere": 15 },
-    { "year": 2003, "soucoupe": 22, "cigare": 10, "triangle": 30, "sphere": 18 },
-    { "year": 2004, "soucoupe": 30, "cigare": 12, "triangle": 35, "sphere": 20 }
-  ];
+  const shapesToKeep = ["disk", "cylinder", "triangle", "sphere"];
 
-  const allowedShapes = ["soucoupe", "cigare", "triangle", "sphere"];
-  const allowedYears = [2000, 2001, 2002, 2003, 2004];
+  // nettoyage et transformation
+  const filtered = csvData
+    .filter(d => d.datetime && shapesToKeep.includes(d.shape))
+    .map(d => ({
+      year: new Date(d.datetime).getFullYear(),
+      shape: d.shape
+    }));
 
-  // Filtrer les données
-  const filteredData = data.filter(entry =>
-    allowedYears.includes(entry.year)
+  const nested = d3.rollup(
+    filtered,
+    v => v.length,
+    d => d.year,
+    d => d.shape
   );
 
-  if (filteredData.length === 0) {
-    console.error('No data available after filtering.');
-    return;
-  }
+  const years = Array.from(nested.keys()).sort((a, b) => a - b);
 
-  // Liste des groupes (les types d'OVNI)
-  var keys = Object.keys(filteredData[0]).slice(1); // Exclure l'année
+  const stackData = years.map(year => {
+    const yearData = { year: +year };
+    shapesToKeep.forEach(shape => {
+      yearData[shape] = nested.get(year)?.get(shape) || 0;
+    });
+    return yearData;
+  });
 
-  // Ajouter l'axe X
-  var x = d3.scaleLinear()
-    .domain(d3.extent(filteredData, function (d) { return d.year; }))
+  const x = d3.scaleLinear()
+    .domain([1940, d3.max(stackData, d => d.year)]) // Commence à partir de 1940
     .range([0, width]);
 
-  svg.append("g")
-    .attr("transform", "translate(0," + height * 0.8 + ")")
-    .call(d3.axisBottom(x).tickSize(-height * 0.7).tickValues([2000, 2001, 2002, 2003, 2004]))
-    .select(".domain").remove();
+  const y = d3.scaleLinear().range([height, 0]);
 
-  // Personnalisation des ticks de l'axe X
-  svg.selectAll(".tick line")
-    .attr("stroke", "#b8b8b8")
-    .attr("stroke-width", 1);
+  const color = d3.scaleOrdinal()
+    .domain(shapesToKeep)
+    .range(d3.schemeTableau10);
 
-  svg.selectAll(".tick text")
-    .style("font-size", "14px")
-    .style("fill", "#555");
+  const stacked = d3.stack()
+    .keys(shapesToKeep)
+    .offset(d3.stackOffsetSilhouette)(stackData);
 
-  // Ajouter le label de l'axe X
-  svg.append("text")
-    .attr("text-anchor", "middle")
-    .attr("x", width / 2)
-    .attr("y", height + 40)
-    .style("font-size", "16px")
-    .style("fill", "#333")
-    .text("Time (year)");
+  y.domain([
+    d3.min(stacked, layer => d3.min(layer, d => d[0])),
+    d3.max(stacked, layer => d3.max(layer, d => d[1]))
+  ]);
 
-  // Ajouter l'axe Y
-  var y = d3.scaleLinear()
-    .domain([0, d3.max(filteredData, function (d) {
-      return d.soucoupe + d.cigare + d.triangle + d.sphere;
-    })])
-    .range([height, 0]);
+  const area = d3.area()
+    .x(d => x(d.data.year))
+    .y0(d => y(d[0]))
+    .y1(d => y(d[1]));
 
-  svg.append("g")
-    .call(d3.axisLeft(y).ticks(5).tickSize(-width))
-    .select(".domain").remove();
-
-  // Personnalisation des ticks de l'axe Y
-  svg.selectAll(".tick line")
-    .attr("stroke", "#b8b8b8")
-    .attr("stroke-width", 1);
-
-  svg.selectAll(".tick text")
-    .style("font-size", "14px")
-    .style("fill", "#555");
-
-  // Palette de couleurs
-  var color = d3.scaleOrdinal()
-    .domain(keys)
-    .range(d3.schemeDark2);
-
-  // Empiler les données
-  var stackedData = d3.stack()
-    .keys(keys)
-    (filteredData);
-
-  // Créer un tooltip
-  var Tooltip = svg
-    .append("text")
+  const tooltip = svg.append("text")
     .attr("x", 10)
-    .attr("y", 30)
+    .attr("y", 20)
     .style("opacity", 0)
-    .style("font-size", "17px")
-    .style("background", "white");
+    .style("font-size", "16px")
+    .style("fill", "#13c287")
+    .style("font-weight", "bold");
 
-  // Fonctions pour gérer le tooltip
-  var mouseover = function (d) {
-    Tooltip.style("opacity", 1);
-    d3.selectAll(".myArea").style("opacity", 0.2);
-    d3.select(this)
-      .style("stroke", "black")
-      .style("opacity", 1);
-  };
-
-  var mousemove = function (event, d) {
-    var grp = d.key;
-    var year = Math.round(x.invert(d3.pointer(event)[0])); // Trouver l'année correspondante
-    var value = filteredData.find(item => item.year === year)?.[grp] || 0; // Trouver la valeur correspondante
-    Tooltip.text(grp + ": " + value + " sightings in " + year);
-  };
-
-  var mouseleave = function (d) {
-    Tooltip.style("opacity", 0);
-    d3.selectAll(".myArea").style("opacity", 1).style("stroke", "none");
-  };
-
-  // Générateur d'aire
-  var area = d3.area()
-    .x(function (d) { return x(d.data.year); })
-    .y0(function (d) { return y(d[0]); })
-    .y1(function (d) { return y(d[1]); });
-
-  // Afficher les zones empilées
-  svg
-    .selectAll("mylayers")
-    .data(stackedData)
-    .enter()
-    .append("path")
+  svg.selectAll("path")
+    .data(stacked)
+    .join("path")
     .attr("class", "myArea")
-    .style("fill", function (d) { return color(d.key); })
+    .attr("fill", d => color(d.key))
     .attr("d", area)
     .on("mouseover", function (event, d) {
-      mouseover.call(this, d);
-      // Ajouter une légende au survol avec une transition douce
-      svg.append("text")
-        .attr("class", "legend")
-        .attr("x", width - 150)
-        .attr("y", 50)
-        .style("font-size", "14px")
-        .style("fill", color(d.key))
-        .style("opacity", 0)
-        .transition()
-        .duration(300)
-        .style("opacity", 1)
-        .text(d.key);
+      d3.selectAll(".myArea").style("opacity", 0.2);
+      d3.select(this).style("opacity", 1);
+      tooltip.style("opacity", 1).text(d.key);
     })
-    .on("mousemove", mousemove)
-    .on("mouseleave", function (d) {
-      mouseleave.call(this, d);
-      // Supprimer la légende au départ du survol avec une transition douce
-      svg.selectAll(".legend")
-        .transition()
-        .duration(300)
-        .style("opacity", 0)
-        .remove();
+    .on("mousemove", function (event, d) {
+      const [xPos, yPos] = d3.pointer(event);
+      const year = Math.round(x.invert(xPos));
+      const value = stackData.find(item => item.year === year)?.[d.key] || 0;
+      tooltip
+        .attr("x", 10)
+        .attr("y", 20)
+        .text(`${d.key}: ${value}`);
+    })
+    .on("mouseleave", function () {
+      d3.selectAll(".myArea").style("opacity", 1);
+      tooltip.style("opacity", 0);
     });
+
+  svg.append("g")
+    .attr("transform", `translate(0, ${height})`)
+    .call(d3.axisBottom(x).ticks(10).tickFormat(d3.format("d")))
+    .select(".domain").remove();
+
+  svg.append("text")
+    .attr("x", width)
+    .attr("y", height + 25)
+    .style("text-anchor", "end")
+    // .text("Time (year)");
 }
