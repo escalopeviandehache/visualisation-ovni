@@ -1,3 +1,5 @@
+import '../data/processed_data'
+
 export default function UFOTypeGraph() {
   var margin = { top: 20, right: 0, bottom: 50, left: 50 }; // Ajout de marges pour mieux espacer les éléments
   var width = window.innerWidth - margin.left - margin.right;
