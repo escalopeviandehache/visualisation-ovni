@@ -20,6 +20,9 @@ html, body {
   width: 100%;
   overflow-x: hidden; /* Empêche le défilement horizontal */
 }
+body {
+  overflow-x: hidden; /* Empêche le défilement horizontal */
+}
 
 
 body {

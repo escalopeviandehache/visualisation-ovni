@@ -4,7 +4,6 @@ body {
     margin: 0 auto;
     padding: 20px;
     background-color: #0a0a0a;
-    background-image: url('../img/simpsonAlien.jpg');
 }
 .film-container {
     background-color: rgba(255, 255, 255, 0.8);

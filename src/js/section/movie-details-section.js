@@ -1,11 +1,11 @@
-import { filmsData } from '../data/films_data.js';
+import { filmsData } from '../data/films_data';
 
 document.addEventListener('DOMContentLoaded', function () {
     // Récupérer l'ID du film depuis l'URL
     const urlParams = new URLSearchParams(window.location.search);
     const filmId = urlParams.get('film');
 
-    // Vérifier si l'élément
+    // Trouver le film correspondant dans les données
     let filmTrouve = null;
 
     // Correspondance entre les IDs et les titres
@@ -60,4 +60,3 @@ document.addEventListener('DOMContentLoaded', function () {
                 `;
     }
 });
-
