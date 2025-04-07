@@ -57,84 +57,6 @@ footer {
 }
 
 
-/* 
-#space-shooter {
-    background: linear-gradient(135deg, #1f1f1f, #3e3e3e);
-    border-radius: 15px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    color: white;
-    margin-top: 40px;
-    animation: fadeIn 1.5s ease-in-out;
-  }
-
-  .game-title {
-    font-size: 2.5rem;
-    color: #ff5722;
-    text-transform: uppercase;
-    font-weight: bold;
-    margin-bottom: 20px;
-    animation: slideIn 1.5s ease-out;
-  }
-
-  .game-description {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    margin-bottom: 30px;
-    opacity: 0;
-    animation: fadeInText 1.5s 1s forwards;
-  }
-
-  .game-link {
-    display: inline-block;
-    background-color: #ff5722;
-    color: white;
-    padding: 15px 25px;
-    text-decoration: none;
-    border-radius: 30px;
-    font-size: 1.5rem;
-    font-weight: bold;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
-  }
-
-  .game-link:hover {
-    background-color: #e64a19;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-  }
-
-  /* Animation effects */
-  /* @keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-  }
-
-  @keyframes slideIn {
-    0% { transform: translateY(-50px); opacity: 0; }
-    100% { transform: translateY(0); opacity: 1; }
-  }
-
-  @keyframes fadeInText {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-  } */
-
-  /* Responsive styles */
-  /* @media screen and (max-width: 768px) {
-    .game-title {
-      font-size: 2rem;
-    }
-
-    .game-description {
-      font-size: 1rem;
-    }
-
-    .game-link {
-      font-size: 1.2rem;
-    }
-  } */ */
   #game-button {
     display: inline-block;
     background-color: #13c287; /* Vert lumineux adapté au thème */
@@ -167,4 +89,32 @@ footer {
 #game-button:active {
     transform: translateY(0);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+.img-crop-circles {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  padding: 10px;
+}
+
+.img-crop-circles img {
+  max-width: 40%; /* Réduit la taille des images */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  flex-shrink: 0; /* Empêche les images de rétrécir */
+}
+
+.img-crop-circles::-webkit-scrollbar {
+  height: 8px;
+}
+
+.img-crop-circles::-webkit-scrollbar-thumb {
+  background-color: #13c287;
+  border-radius: 4px;
+}
+
+.img-crop-circles::-webkit-scrollbar-track {
+  background-color: #333;
 }
