@@ -27,13 +27,15 @@ export default function initializeUSAMap() {
 
     // Définir un dégradé personnalisé pour la heatmap
     const gradient = {
-        0.0: '#00FF00',    // Faible intensité = vert fluo
-        0.3: '#33FF33',    // Intensité faible à moyenne = vert plus clair
-        0.5: '#66FF66',    // Intensité moyenne = vert phosphorescent
-        0.7: '#99FF99',    // Intensité moyenne à élevée = vert acide
-        0.85: '#00FF99',   // Intensité élevée = vert néon
-        1.0: '#33FF99'     // Très forte intensité = vert électrique
+        0.0: '#00441b',    // Faible intensité = vert foncé
+        0.2: '#006d2c',    // Intensité faible à moyenne = vert forêt
+        0.4: '#238845',    // Intensité moyenne = vert vif
+        0.6: '#41ab5d',    // Intensité moyenne à élevée = vert clair
+        0.8: '#74c476',    // Intensité élevée = vert tendre
+        0.9: '#a1d998',    // Très forte intensité = vert pastel
+        1.0: '#c7e9c0'     // Intensité maximale = vert pâle
     };
+
 
     // Ajout de la heatmap avec un gradient personnalisé à la carte
     L.heatLayer(heatData, {
