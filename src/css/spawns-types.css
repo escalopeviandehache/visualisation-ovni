@@ -6,6 +6,9 @@
     background-color: #121212;
     color: white;
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   
   .typesApparitions h2 {
