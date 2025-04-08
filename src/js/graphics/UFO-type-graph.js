@@ -13,7 +13,7 @@ export default function UFOTypeGraph() {
     .append("g")
     .attr("transform", `translate(${margin.left},${margin.top})`);
 
-  const shapesToKeep = ["disk", "cylinder", "triangle", "sphere", "cigar", "light", "fireball", "unknown"];
+  const shapesToKeep = ["light", "cylinder", "triangle", "sphere", "cigar", "disk", "fireball", "unknown"];
 
   // nettoyage et transformation
   const filtered = csvData
