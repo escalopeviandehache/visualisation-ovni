@@ -13,7 +13,7 @@ export default function UFOTypeGraph() {
     .append("g")
     .attr("transform", `translate(${margin.left},${margin.top})`);
 
-  const shapesToKeep = ["disk", "cylinder", "triangle", "sphere"];
+  const shapesToKeep = ["disk", "cylinder", "triangle", "sphere", "cigar", "light", "fireball", "unknown"];
 
   // nettoyage et transformation
   const filtered = csvData
@@ -72,11 +72,15 @@ export default function UFOTypeGraph() {
     .style("fill", "#13c287")
     .style("font-weight", "bold");
 
+  const greenShades = d3.scaleOrdinal()
+    .domain(shapesToKeep)
+    .range(["#00441b", "#006d2c", "#238845", "#41ab5d", "#74c476", "#a1d998", "#c7e9c0", "#e5f5e0"]);
+
   svg.selectAll("path")
     .data(stacked)
     .join("path")
     .attr("class", "myArea")
-    .attr("fill", d => color(d.key))
+    .attr("fill", d => greenShades(d.key))
     .attr("d", area)
     .on("mouseover", function (event, d) {
       d3.selectAll(".myArea").style("opacity", 0.2);
