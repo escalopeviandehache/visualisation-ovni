@@ -6,6 +6,8 @@
   font-family: 'Helvetica Neue', sans-serif;
   color: #f0f0f0;
   border-radius: 16px;
+  scrollbar-color: #13c287 #222;
+
 }
 
 .evolution-slider h2 {
