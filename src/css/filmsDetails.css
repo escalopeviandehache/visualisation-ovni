@@ -4,61 +4,113 @@ body {
     margin: 0 auto;
     padding: 20px;
     background-color: #0a0a0a;
+    background-image: url('../img/filmBackground/galaxyWallpaper.jpg');
+    color: #fff;
 }
+
 .film-container {
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 10px;
-    padding: 30px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    display: grid;
+    grid-template-columns: 38% 62%;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+        "poster content"
+        "trailer content";
+    gap: 20px;
+    background-color: rgba(248, 248, 248, 0.9);
+    border-radius: 8px;
+    padding: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
-.film-header {
-    margin-bottom: 30px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
+
+/* Zone de l'affiche */
+.film-poster-area {
+    grid-area: poster;
 }
+
 .film-poster {
-    width: 300px;
-    margin-right: 30px;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    width: 100%;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    border: 2px solid #333;
 }
-.film-info h1 {
-    margin-top: 0;
-    margin-bottom: 10px;
-    color: #333;
+
+/* Zone du contenu à droite */
+.film-content {
+    grid-area: content;
+    padding-left: 10px;
+    overflow-y: auto;
+    max-height: 700px;
 }
-.film-info p {
-    margin: 5px 0;
-    color: #666;
+
+.film-title {
+    font-size: 2.5rem;
+    margin: 0 0 5px 0;
+    color: #4caf50; /* Couleur verte comme dans l'image */
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
+
+.film-year-director {
+    font-family: 'Courier New', monospace;
+    margin-bottom: 25px;
+    color: #141414;
+}
+
 .film-description {
     line-height: 1.6;
-    margin-top: 20px;
+    color: #141414;
+    margin-bottom: 30px;
+    font-size: 15px;
+    text-align: justify;
 }
+
 .back-button {
     display: inline-block;
-    margin-top: 30px;
     padding: 10px 20px;
-    background-color: #333;
+    background-color: #4caf50;
     color: white;
     text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+    border-radius: 4px;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 15px;
 }
+
 .back-button:hover {
-    background-color: #555;
+    background-color: #66bb6a;
+    transform: translateY(-2px);
 }
-.film-year {
-    font-weight: bold;
-}
-.film-director {
-    font-style: italic;
-}
+
 .error-message {
-    color: red;
+    color: #ff6b6b;
     text-align: center;
     padding: 50px;
+    grid-column: 1 / span 2;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .film-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas: 
+            "poster"
+            "trailer"
+            "content";
+    }
+    
+    .film-poster-area {
+        max-width: 450px;
+        margin: 0 auto;
+    }
+    
+    .film-trailer {
+        max-width: 450px;
+        margin: 0 auto;
+    }
+    
+    .film-content {
+        padding-left: 0;
+        max-height: none;
+    }
 }

@@ -34,29 +34,31 @@ document.addEventListener('DOMContentLoaded', function () {
         let posterPath = `../../img/affiches-film/affiche-film-${filmId}.jpg`;
 
         let contentHTML = `
-                    <div class="film-header">
-                        <img src="${posterPath}" alt="${filmTrouve.titre}" class="film-poster">
-                        <div class="film-info">
-                            <h1>${filmTrouve.titre}</h1>
-                            <p class="film-director">Réalisé par ${filmTrouve.realisateur}</p>
-                            <p class="film-year">Année: ${filmTrouve.annee}</p>
-                        </div>
-                    </div>
-                    <div class="film-description">
-                        ${filmTrouve.description}
-                    </div>
-                    <a href="../../index.html#anecdote-films" class="back-button">Retour aux films</a>
-                `;
+            <div class="film-poster-area">
+                <img src="${posterPath}" alt="${filmTrouve.titre}" class="film-poster">
+            </div>
+            
+            <div class="film-content">
+                <h1 class="film-title">${filmTrouve.titre}</h1>
+                <p class="film-year-director">${filmTrouve.annee} - ${filmTrouve.realisateur}</p>
+                
+                <div class="film-description">
+                    ${filmTrouve.description}
+                </div>
+                
+                <a href="../../index.html#anecdote-films" class="back-button">Retour aux films</a>
+            </div>
+        `;
 
         filmContent.innerHTML = contentHTML;
     } else {
         // Afficher un message d'erreur si le film n'est pas trouvé
         filmContent.innerHTML = `
-                    <div class="error-message">
-                        <h2>Film non trouvé</h2>
-                        <p>Désolé, nous n'avons pas trouvé d'informations pour ce film.</p>
-                        <a href="../../index.html#anecdote-films" class="back-button">Retour aux films</a>
-                    </div>
-                `;
+            <div class="error-message">
+                <h2>Film non trouvé</h2>
+                <p>Désolé, nous n'avons pas trouvé d'informations pour ce film.</p>
+                <a href="../../index.html#anecdote-films" class="back-button">Retour aux films</a>
+            </div>
+        `;
     }
 });
