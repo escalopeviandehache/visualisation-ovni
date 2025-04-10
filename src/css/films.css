@@ -10,7 +10,7 @@
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
-    gap: 275px;
+    gap: 155px;
     padding: 20px;
     width: 90%;
     max-width: 1650px;
@@ -43,8 +43,8 @@
 }
 
 .film-item img {
-    width: 460px;
-    height: 700px; /* Hauteur fixe pour harmoniser les affiches */
+    width: 345px;
+    height: 525px; /* Hauteur fixe pour harmoniser les affiches */
     object-fit: cover;
     border-radius: 5px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);

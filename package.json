@@ -34,6 +34,7 @@
     "leaflet": "^1.9.4",
     "leaflet.heat": "^0.2.0",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "scrollmagic": "^2.0.8"
   }
 }
