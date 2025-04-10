@@ -65,3 +65,21 @@
         height: 225px;
     }
 }
+
+.anecdoteFilms .pFilms {
+    position: relative; /* ou fixed selon le besoin */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 100px;
+    margin-bottom: -50px;
+    background-color: rgba(0, 0, 0, 0.7); /* Fond semi-transparent pour améliorer la lisibilité */
+    color: #ffffff;
+    padding: 1rem;
+    border-radius: 8px;
+    line-height: 1.5;
+    max-width: 90%; /* Limite la largeur du texte */
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
