@@ -1,7 +1,12 @@
-#ufo-type-graph {
-    width: 100%;
-    max-width: 900px;
-    height: 500px;
-    margin: auto;
-}
+.ufo-type {
+    margin: 0; /* Supprime les marges */
+    padding: 0; /* Supprime les espacements internes */
+    width: 100%; /* Occupe toute la largeur de la page */
+    box-sizing: border-box; /* Inclut les bordures et le padding dans la largeur totale */
+  }
+  
+  #ufo-type-graph {
+    width: 100%; /* Assure que le conteneur du graphique occupe toute la largeur */
+    height: auto; /* Ajuste la hauteur automatiquement */
+  }
 

@@ -69,13 +69,7 @@ footer {
 
 
   #game-button {
-    display: inline-block;
-    background-color: #13c287; /* Vert lumineux adapté au thème */
-    color: white;
-    padding: 15px 30px;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
+    
     border: none;
     border-radius: 30px;
     font-family: 'Inter', sans-serif;
@@ -83,13 +77,24 @@ footer {
     cursor: pointer;
     transition: all 0.3s ease;
     letter-spacing: 1px;
-    height: 80px; /* Ajuste la hauteur du bouton */
-    width: 400px; /* Ajuste la largeur du bouton */
+    height: 50px; /* Ajuste la hauteur du bouton */
+    width: 200px; /* Ajuste la largeur du bouton */
+
+    display: inline-block;
+    background-color: #3f3f3f;
+    color: white;
+    padding: 10px 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+
 }
 
 #game-button:hover {
-    background-color: #13c287; /* Changement de couleur au survol */
-    transform: translateY(-4px);
+  background-color: #595959;
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.6);
 }
 
@@ -97,10 +102,7 @@ footer {
     outline: none;
 }
 
-#game-button:active {
-    transform: translateY(0);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
-}
+
 
 .img-crop-circles {
   display: flex;
