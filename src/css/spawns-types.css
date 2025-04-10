@@ -13,12 +13,7 @@
     scrollbar-color: #13c287 #222;
   }
   
-  .typesApparitions h2 {
-    font-family: 'Inter', sans-serif; /* s'assure qu'elle utilise bien la police importée */
-    margin-bottom: 1rem;
-    font-size: 1.8rem;
-    text-align: center;
-  }
+ 
   
   .horizontal-scroll-container {
     display: flex;

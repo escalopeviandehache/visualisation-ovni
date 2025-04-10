@@ -43,6 +43,13 @@ header {
 h1, h2 {
     color: #13c287;
 }
+h2 {
+  font-family: DeliriumNcV;
+  color: #13c287;
+  padding: 10px;
+  font-size: 3.5rem;
+}
+
 
 section {
     padding: 20px;
