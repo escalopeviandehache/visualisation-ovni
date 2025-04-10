@@ -10,6 +10,7 @@ export default function initializeUSAMap() {
         attribution: '&copy; OpenStreetMap contributors, &copy; CartoDB',
     }).addTo(mapUSA);
 
+
     // Filtrer les données CSV pour ne conserver que celles des États-Unis
     const heatData = csvData
         .filter(row => row.country === 'us') // Ne garder que les entrées avec country == 'us'
@@ -46,14 +47,23 @@ export default function initializeUSAMap() {
     }).addTo(mapUSA);
 
     // Ajouter un marqueur pour la Zone 51
-    const zone51Marker = L.marker([37.25436354487456, -115.78680345914648]).addTo(mapUSA);
+    const zone51Icon = L.icon({
+        iconUrl: '../../img/ovni-pin.png', // Chemin vers l'icône personnalisée
+        iconSize: [75, 75], // Taille de l'icône
+        iconAnchor: [37, 75], // Point d'ancrage de l'icône (au centre en bas)
+        popupAnchor: [0, -70] // Point d'ancrage du popup par rapport à l'icône (en bas au centre)
+    });
+
+    const zone51Marker = L.marker([37.25436354487456, -115.78680345914648], { icon: zone51Icon }).addTo(mapUSA);
 
     // Ajouter un popup au marqueur, avec du contenu personnalisé et un style adapté
     zone51Marker.on('click', function() {
         const popupContent = `
             <div class="custom-popup">
-                <h3 style="text-align: center; font-size: 1.5rem;">Zone 51</h3>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Nellis_AFB_Area_51.jpg" alt="Zone 51" style="width: 100%; border-radius: 6px; margin-bottom: 10px;" />
+                <div class="popup-image-overlay">
+                    <h3 class="popup-title-top-left">Zone 51</h3>
+                    <img src="src/img/spawns-types/area51.webp" alt="Zone 51" />
+                </div>
                 <p><strong>Location:</strong> Nevada</p>
                 <p><strong>Coordinates:</strong> 37.25436354487456, -115.78680345914648</p>
                 <p><strong>Description:</strong><br>
