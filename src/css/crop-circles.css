@@ -1,0 +1,31 @@
+
+
+.img-crop-circles {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    padding: 10px;
+    scrollbar-color: #13c287 #222;
+
+  }
+  
+  .img-crop-circles img {
+    max-width: 40%; /* Réduit la taille des images */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    flex-shrink: 0; /* Empêche les images de rétrécir */
+  }
+  
+  .img-crop-circles::-webkit-scrollbar {
+    height: 8px;
+  }
+  
+  .img-crop-circles::-webkit-scrollbar-thumb {
+    background-color: #000000;
+    border-radius: 4px;
+  }
+  
+  .img-crop-circles::-webkit-scrollbar-track {
+    background-color: #333;
+  }
