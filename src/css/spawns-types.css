@@ -9,6 +9,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    scrollbar-width:auto;
+    scrollbar-color: #13c287 #222;
   }
   
   .typesApparitions h2 {
