@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="spawnByYear.css" />
+    <script type="module" src="spawnByYear.js" defer></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://unpkg.com/scrollama"></script>
+
+    <title>Visualisation-OVNIs de 1950 à 2015</title>
+  </head>
+  <body>
+
+    <!-- Icône décorative d'OVNI -->
+      <svg class="ufo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="50" cy="65" rx="40" ry="15" fill="#222" stroke="#4dfa8c" stroke-width="2"/>
+        <ellipse cx="50" cy="65" rx="25" ry="9" fill="#0a0e17" stroke="#4dfa8c" stroke-width="1"/>
+        <ellipse cx="50" cy="40" rx="20" ry="15" fill="#333" stroke="#4dfa8c" stroke-width="2"/>
+        <circle cx="50" cy="40" r="10" fill="#4dfa8c" opacity="0.8"/>
+        <!-- Rayons -->
+        <line x1="50" y1="80" x2="50" y2="90" stroke="#4dfa8c" stroke-width="1" stroke-dasharray="2,2"/>
+        <line x1="40" y1="75" x2="35" y2="85" stroke="#4dfa8c" stroke-width="1" stroke-dasharray="2,2"/>
+        <line x1="60" y1="75" x2="65" y2="85" stroke="#4dfa8c" stroke-width="1" stroke-dasharray="2,2"/>
+      </svg>
+    
+  </body>
+</html>
