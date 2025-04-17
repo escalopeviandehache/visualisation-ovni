@@ -31,6 +31,7 @@
   "dependencies": {
     "@vitejs/plugin-react": "^4.3.4",
     "d3": "^7.9.0",
+    "gsap": "^3.12.7",
     "leaflet": "^1.9.4",
     "leaflet.heat": "^0.2.0",
     "react": "^19.1.0",

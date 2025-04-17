@@ -31,6 +31,10 @@
 
 <script src="https://unpkg.com/scrollama"></script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+<script type="module" src="./src/js/section/testimony-section.js"></script>
+
 </head>
 
 
@@ -41,9 +45,9 @@
 
     <section class="testimony-slider">
       <!-- <h2>Les témoignages marquants</h2> -->
-      <div class="testimony-slider-container">
+      <div class="testimony-section-wrapper">
         <!-- Première slide : Titre sur l'image en haut à gauche -->
-        <div class="testimony-slide" id="testimony-slide-1">
+        <div class="testimony-section" id="slide-1">
           <div class="testimony-image-overlay">
             <h3 class="testimony-title-top-left">Le témoignage de Maurice Masse</h3>
             <img src="/img/maurice-masse-1.jpg" alt="Maurice Masse" />
@@ -51,7 +55,7 @@
         </div>
     
         <!-- Deuxième slide : Texte explicatif centré en haut de l'image -->
-        <div class="testimony-slide" id="testimony-slide-2">
+        <div class="testimony-section" id="slide-2">
           <div class="testimony-background-content">
             <img src="/img/maurice-masse-3.jpg" alt="Maurice Masse" />
             <blockquote class="testimony-centered-text">
@@ -62,7 +66,7 @@
         </div>
     
         <!-- Troisième slide : Image à gauche et texte à droite -->
-        <div class="testimony-slide" id="testimony-slide-3">
+        <div class="testimony-section" id="slide-3">
           <div class="testimony-img-left">
             <img src="/img/valensole65.jpg" alt="Affiche du long-métrage intitulé Valensole 1965" />
           </div>
@@ -72,10 +76,7 @@
           </div>
         </div>
       </div>
-      <!-- <div class="testimony-slider-controls">
-        <button class="testimony-slide-btn prev-slide" aria-label="Slide précédente">&#10094;</button>
-        <button class="testimony-slide-btn next-slide" aria-label="Slide suivante">&#10095;</button>
-      </div> -->
+      
     </section>
 
 
