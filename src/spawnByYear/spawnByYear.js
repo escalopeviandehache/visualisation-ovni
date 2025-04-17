@@ -1,10 +1,9 @@
-// Importation des bibliothèques nécessaires
 import * as d3 from 'd3';
 import scrollama from 'scrollama';
 
 const CSV_PATH = 'complete.csv';
 
-// Configuration
+
 const config = {
   margin: { top: 70, right: 60, bottom: 60, left: 80 },
   width: 800,
@@ -15,21 +14,17 @@ const config = {
     primary: '#27fb6b',    // Vert alien
     secondary: '#9c27fb',  // Violet
     background: '#0a0e17', // Fond sombre
-    text: '#e4ffe6',       // Texte clair verdâtre
-    highlight: '#ff5722'   // Orange pour les points importants
+    text: '#e4ffe6',       
+    highlight: '#ff5722'   
   }
 };
 
-// Variables globales
 let data;
 let svg;
 let timelineYears = [];
-let currentYearIndex = 0;
 
-// Fonction principale
 async function init() {
   try {
-    // Ajout d'un effet de chargement
     const loadingElement = d3.select('body')
       .append('div')
       .attr('class', 'loading')
@@ -78,10 +73,7 @@ async function init() {
     const csvText = await response.text();
     data = d3.csvParse(csvText);
     
-    // Vérification des colonnes disponibles
-    console.log("Colonnes disponibles:", Object.keys(data[0]));
     
-    // Filtrer les données pour n'avoir que les observations de 1950 à aujourd'hui
     data = data.filter(d => {
       if (!d.datetime) {
         return false;
@@ -96,7 +88,7 @@ async function init() {
       }
     });
     
-    // Convertir les dates
+    // Conversion des dates
     data.forEach(d => {
       try {
         d.date = new Date(d.datetime);
@@ -106,47 +98,21 @@ async function init() {
       }
     });
 
-    // Générer les années pour le timeline
+    // Genere date pour timeline
     for (let year = config.yearStart; year <= config.yearEnd; year += 5) {
       timelineYears.push(year);
     }
     
-    // Retirer l'écran de chargement
     loadingElement.remove();
     
-    // Mise en place de la structure HTML
     setupDOM();
     
-    // Créer la visualisation
     setupVisualization();
     
-    // Configurer Scrollama
     setupScrollama();
     
   } catch (error) {
-    console.error("Erreur lors de l'initialisation:", error);
-    document.body.innerHTML = `
-      <div style="color: ${config.colors.highlight}; padding: 20px; font-family: 'Orbitron', sans-serif; text-align: center; height: 100vh; display: flex; align-items: center; justify-content: center; background: ${config.colors.background};">
-        <div>
-          <h2 style="font-size: 28px; margin-bottom: 20px;">Erreur lors du chargement des données</h2>
-          <p style="font-size: 18px; margin-bottom: 15px;">${error.message}</p>
-          <p style="font-size: 16px;">Vérifiez la console pour plus de détails.</p>
-          <p style="font-size: 16px; margin-top: 15px;">Assurez-vous que le fichier CSV est accessible à l'emplacement: ${CSV_PATH}</p>
-          <button onclick="location.reload()" style="
-            margin-top: 30px;
-            padding: 10px 20px;
-            background: transparent;
-            border: 2px solid ${config.colors.primary};
-            color: ${config.colors.primary};
-            font-family: 'Orbitron', sans-serif;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: all 0.3s;
-          ">Réessayer</button>
-        </div>
-      </div>
-    `;
+    console.error("Erreur lors de l'initialisation:", error); 
   }
 }
 
