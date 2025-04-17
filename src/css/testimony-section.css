@@ -1,129 +1,17 @@
-/* Styles généraux pour le slider */
-.testimony-slider-container {
+.testimony-section-wrapper {
   display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  gap: 1.5rem;
-  scrollbar-color: #13c287 #222;
-
+  overflow-x: hidden;        /* pour cacher le débordement horizontal */
+  width: 100%;             /* prend toute la largeur de la fenêtre */
+  height: 100vh;           /* hauteur plein écran pour permettre le scroll */
 }
 
-.testimony-slide {
-  flex: 0 0 90%;
-  scroll-snap-align: start;
-  background-color: #1a1a1a;
-  border-radius: 16px;
-  padding: 1.5rem;
-  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.05);
-
+.testimony-section {
+  flex: 0 0 100%;          /* chaque section fait 100% de la largeur du viewport */
+  box-sizing: border-box;
+  /* si tu veux un petit padding ou marge, ok, mais pense à ajuster le end() en JS */
 }
-
-/* Première slide : Titre sur l'image en haut à gauche */
-#testimony-slide-1 .testimony-image-overlay {
-  position: relative;
-}
-
-#testimony-slide-1 .testimony-title-top-left {
-  font-family: DeliriumNcV;
-  position: absolute;
-  top: 10px;
-  left: 80px;
-  color: rgb(1, 99, 43);
-  padding: 10px;
-  font-size: 3.5rem;
-  border-radius: 8px;
-}
-
-#testimony-slide-1 img {
-  width: 100%;
-  height: 700px;
-  border-radius: 12px;
-}
-/* Deuxième slide : Texte explicatif centré en haut de l'image */
-#testimony-slide-2 .testimony-background-content {
-  position: relative;
-  text-align: center;
-}
-
-#testimony-slide-2 img {
-  width: auto;
-  height: 700px;
-  border-radius: 12px;
-}
-
-#testimony-slide-2 .testimony-centered-text {
-  margin-top: 10px;
-  position: absolute;
-  top: 10%; /* Positionne le texte en haut de l'image */
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: rgba(0, 0, 0, 0.7); /* Fond semi-transparent pour améliorer la lisibilité */
-  color: #ffffff;
-  padding: 1rem;
-  border-radius: 8px;
-  line-height: 1.5;
-  max-width: 80%; /* Limite la largeur du texte */
-  text-align: center;
-}
-
-#testimony-slide-2 .testimony-author {
-  margin-top: 1rem;
-  font-size: 1rem;
-  color: #cccccc;
-  text-align: center;
-}
-blockquote {
-  font-style: normal;
-  color: #cccccc;
-  font-size: 1rem;
-  line-height: 1.6;
-  width: 73%;
-  max-width: 85%; /* Augmente la largeur maximale */
-  margin: 0 auto; /* Centre le blockquote horizontalement */
-  text-align: center; /* Centre le texte à l'intérieur */
-  background-color: rgba(255, 255, 255, 0.1); /* Ajoute un fond léger pour le style */
-  border-radius: 8px; /* Arrondit les coins */
-}
-
-/* Troisième slide : Image à gauche et texte à droite */
-#testimony-slide-3 {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-#testimony-slide-3 .testimony-img-left {
-  flex: 1;
-}
-
-#testimony-slide-3 .testimony-img-left img {
-  width: auto;
-  height: 700px;
-  border-radius: 12px;
-}
-
-#testimony-slide-3 .testimony-text-right {
-  flex: 1;
-  color: #cccccc;
-  font-size: 1rem;
-  line-height: 1.6;
-  text-align: left;
-}
-
-#testimony-slide-3 .testimony-link {
-  display: inline-block;
-  background-color: #3f3f3f;
-  color: white;
-  padding: 10px 15px;
-  font-size: 1rem;
-  font-weight: bold;
-  text-align: left;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-
-#testimony-slide-3 .testimony-link:hover {
-  background-color: #595959;
+/* optionnel : si ton body n’est pas assez long, force-le à être scrolable */
+body {
+  height: auto;
+  overflow-x: hidden;
 }
