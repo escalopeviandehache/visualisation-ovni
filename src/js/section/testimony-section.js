@@ -29,7 +29,6 @@
 //     // Initial display
 //     showSlide(currentSlide);
 //   });
-
 // horizontal scroll avec GSAP ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
 
