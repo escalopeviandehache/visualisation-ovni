@@ -160,3 +160,9 @@ footer {
   background-color: #595959;
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.6);
 }
+
+
+.github-icon {
+  width: 3%;
+  height: 3%;
+}
