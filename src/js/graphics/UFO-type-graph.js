@@ -85,16 +85,41 @@ export default function UFOTypeGraph() {
     .on("mouseover", function (event, d) {
       d3.selectAll(".myArea").style("opacity", 0.2);
       d3.select(this).style("opacity", 1);
-      tooltip.style("opacity", 1).text(d.key);
+      const shapeTranslations = {
+        light: "lumière",
+        cylinder: "cylindre",
+        triangle: "triangle",
+        sphere: "sphère",
+        cigar: "cigare",
+        disk: "disque",
+        fireball: "boule de feu",
+        unknown: "inconnu"
+      };
+
+      tooltip.style("opacity", 1).text(shapeTranslations[d.key]);
     })
     .on("mousemove", function (event, d) {
       const [xPos, yPos] = d3.pointer(event);
       const year = Math.round(x.invert(xPos));
       const value = stackData.find(item => item.year === year)?.[d.key] || 0;
+      const shapeTranslations = {
+        light: "lumière",
+        cylinder: "cylindre",
+        triangle: "triangle",
+        sphere: "sphère",
+        cigar: "cigare",
+        disk: "disque",
+        fireball: "boule de feu",
+        unknown: "inconnu"
+      };
       tooltip
         .attr("x", 10)
         .attr("y", 20)
-        .text(`${year}: ${d.key}: ${value}`);
+        .text(`En ${year}`)
+        .append("tspan")
+        .attr("x", 10)
+        .attr("dy", "1.2em")
+        .text(`${value} ovnis de type ${shapeTranslations[d.key]}`);
     })
     .on("mouseleave", function () {
       d3.selectAll(".myArea").style("opacity", 1);
