@@ -94,7 +94,7 @@ export default function UFOTypeGraph() {
       tooltip
         .attr("x", 10)
         .attr("y", 20)
-        .text(`${d.key}: ${value}`);
+        .text(`${year}: ${d.key}: ${value}`);
     })
     .on("mouseleave", function () {
       d3.selectAll(".myArea").style("opacity", 1);
