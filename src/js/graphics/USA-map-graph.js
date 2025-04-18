@@ -2,8 +2,99 @@ import csvData from '../../../public/data/complete.csv'; // Import du fichier CS
 
 export default function initializeUSAMap() {
     console.log("Initialisation de la carte...");
-    const mapUSA = L.map('heatmap-usa').setView([37.7749, -119.4194], 5); // Vue centrée sur les États-Unis
+    const mapUSA = L.map('heatmap-usa', { scrollWheelZoom: false, touchZoom: true }).setView([37.7749, -119.4194], 5); // Vue centrée sur les États-Unis
     console.log("Carte créée avec succès !");
+    // désactiver le zoom au scroll de la souris
+    mapUSA.scrollWheelZoom.disable();
+    // activer le zoom au trackpad (pinch)
+    mapUSA.touchZoom.enable();
+    // gestion du pinch via Pointer Events
+    let activePointers = [];
+    let initialDistance = null;
+  
+    function getDistance(a, b) {
+        const dx = a.clientX - b.clientX;
+        const dy = a.clientY - b.clientY;
+        return Math.hypot(dx, dy);
+    }
+  
+    const container = mapUSA.getContainer();
+    container.style.touchAction = 'none'; // autoriser les gestures
+  
+    container.addEventListener('pointerdown', function(e) {
+        activePointers.push(e);
+    });
+  
+    container.addEventListener('pointermove', function(e) {
+        // mettre à jour le pointeur actif
+        const idx = activePointers.findIndex(p => p.pointerId === e.pointerId);
+        if (idx !== -1) {
+            activePointers[idx] = e;
+        }
+        if (activePointers.length === 2) {
+            const [p1, p2] = activePointers;
+            const dist = getDistance(p1, p2);
+            if (initialDistance !== null) {
+                const scale = dist / initialDistance;
+                const deltaZoom = Math.log2(scale);
+                // zoom autour du centre des deux doigts
+                const center = [
+                    (p1.clientX + p2.clientX) / 2,
+                    (p1.clientY + p2.clientY) / 2
+                ];
+                mapUSA.setZoomAround(container, mapUSA.getZoom() + deltaZoom);
+                initialDistance = dist;
+            } else {
+                initialDistance = dist;
+            }
+        }
+    });
+  
+    ['pointerup', 'pointercancel'].forEach(evt =>
+        container.addEventListener(evt, function(e) {
+            activePointers = activePointers.filter(p => p.pointerId !== e.pointerId);
+            if (activePointers.length < 2) {
+                initialDistance = null;
+            }
+        })
+    );
+    // utiliser window listener avec passive: false pour détecter le pinch trackpad
+    window.addEventListener('wheel', function(e) {
+        if (e.ctrlKey) {
+            e.preventDefault();
+            // activer temporairement le zoom au scroll pour pinch
+            mapUSA.scrollWheelZoom.enable();
+            mapUSA._onWheelScroll(e);
+            // ré-désactiver immédiatement après
+            setTimeout(() => mapUSA.scrollWheelZoom.disable(), 0);
+        }
+    }, { passive: false });
+    // ajouter les styles pour les instructions de zoom
+    const style = document.createElement('style');
+    style.innerHTML = `
+      /* permettre le scroll page vertical et le pinch sur la carte */
+      #heatmap-usa {
+          touch-action: pan-y pinch-zoom;
+      }
+      .zoom-instructions {
+          position: absolute;
+          top: 10px;
+          left: 50%;
+          transform: translateX(-50%);
+          background: rgba(0, 0, 0, 0.5);
+          color: #fff;
+          padding: 8px 12px;
+          border-radius: 4px;
+          font-size: 14px;
+          font-family: sans-serif;
+          z-index: 1000;
+      }
+    `;
+    document.head.appendChild(style);
+    // // créer et ajouter l'overlay d'instructions de zoom
+    // const instructionDiv = L.DomUtil.create('div', 'zoom-instructions');
+    // instructionDiv.innerHTML = 'utilisez les boutons +/- ou le trackpad pour zoomer';
+    // mapUSA.getContainer().appendChild(instructionDiv);
 
     // Ajoute une carte avec un style sombre
     L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png', {
