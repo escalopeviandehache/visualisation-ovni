@@ -41,7 +41,7 @@ gsap.to(sections, {
     trigger: ".testimony-section-wrapper",
     pin: true,
     scrub: 1,
-    snap: 1 / (sections.length - 1),
+    // snap: 1 / (sections.length - 1),
     end: () =>
       "+=" +
       document.querySelector(".testimony-section-wrapper").offsetWidth
