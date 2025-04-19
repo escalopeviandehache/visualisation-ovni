@@ -44,4 +44,7 @@ Consignes de ce projet : [GitHub COMEM-VisualDon](https://github.com/MediaComem/
 
 Projet de visualisation de données sur les OVNIs effectué par d'autres étudiants, en deuxième année de *Bachelor en Ingénierie des médias*, en 2022 : [GitHub VisualDon-Project-UFO](https://github.com/Meryl-D/VisualDon-Project-UFO)
 
+## 👾 Spaceshooter Game
+Nous nous sommes appuyés sur le jeu **[Space Shooter Game Using JavaScript](https://github.com/learnmux/Space-Shooter-Game-Using-Javascript)**, développé par **[@learnmux](https://github.com/learnmux)**, pour enrichir notre visualisation de données d’une dimension ludique et interactive.
+
 ## 🚀 Prêt à explorer les mystères des OVNIs ? Suivez-nous dans cette aventure ! 👽
