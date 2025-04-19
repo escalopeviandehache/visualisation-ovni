@@ -32,7 +32,11 @@
     padding: 1rem;
     border-radius: 12px;
     scroll-snap-align: start;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    /* Partie changée pour style alien */
+    background-color: rgba(10, 14, 23, 0.8);
+    border-radius: 10px;
+    border: 1px solid #27fb6b;
+    box-shadow: 0 0 30px rgba(39, 251, 107, 0.2);
   }
   
   .apparition-card h3 {

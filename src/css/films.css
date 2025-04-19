@@ -2,8 +2,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #222;
     padding: 30px 0;
+    /* Partie changée pour style alien */
+    background-color: rgba(10, 14, 23, 0.8);
+    border-radius: 10px;
+    border: 1px solid #27fb6b;
+    box-shadow: 0 0 30px rgba(39, 251, 107, 0.2);
 }
 
 .films-gallery {

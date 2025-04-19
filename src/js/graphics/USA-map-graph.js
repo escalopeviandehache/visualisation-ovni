@@ -128,6 +128,17 @@ export default function initializeUSAMap() {
         1.0: '#c7e9c0'     // Intensité maximale = vert pâle
     };
 
+    // Dégradé alternatif avec des couleurs plus vives
+    // const gradient = {
+    //     0.0: '#000000',    // Faible intensité = noir
+    //     0.2: '#ff0000',    // Intensité faible à moyenne = rouge
+    //     0.4: '#ff7f00',    // Intensité moyenne = orange
+    //     0.6: '#ffff00',    // Intensité moyenne à élevée = jaune
+    //     0.8: '#7fff00',    // Intensité élevée = vert clair
+    //     0.9: '#00ff00',    // Très forte intensité = vert vif
+    //     1.0: '#00ffff'     // Intensité maximale = cyan
+    // };
+
 
     // Ajout de la heatmap avec un gradient personnalisé à la carte
     L.heatLayer(heatData, {

@@ -26,7 +26,11 @@
   background-color: #1a1a1a;
   border-radius: 16px;
   padding: 1.5rem;
-  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.05);
+  /* Partie changer pour style alien */
+  background-color: rgba(10, 14, 23, 0.8);
+  border-radius: 10px;
+  border: 1px solid #27fb6b;
+  box-shadow: 0 0 30px rgba(39, 251, 107, 0.2);
 }
 
 .slide-evo h3 {

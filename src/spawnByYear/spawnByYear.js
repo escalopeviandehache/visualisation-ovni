@@ -9,7 +9,7 @@ const config = {
   width: 800,
   height: 500,
   yearStart: 1950,
-  yearEnd: 2015,
+  yearEnd: 2014,
   colors: {
     primary: '#27fb6b',    // Vert alien
     secondary: '#9c27fb',  // Violet
@@ -99,7 +99,7 @@ async function init() {
     });
 
     // Genere date pour timeline
-    for (let year = config.yearStart; year <= config.yearEnd; year += 5) {
+    for (let year = config.yearStart; year <= config.yearEnd; year += 4) {
       timelineYears.push(year);
     }
     
