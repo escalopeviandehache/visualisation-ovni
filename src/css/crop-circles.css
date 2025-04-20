@@ -1,3 +1,9 @@
+#crop-circle-text{
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
 .img-crop-circles {
   display: flex;
   justify-content: center; /* Centre les images horizontalement */
@@ -9,11 +15,17 @@
 }
 
 .img-crop-circles img {
-  width: 300px; /* Largeur fixe pour toutes les images */
-  height: 300px; /* Hauteur fixe pour toutes les images */
+  width: 200px; /* Largeur réduite */
+  height: 200px; /* Hauteur réduite */
   border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-  flex-shrink: 0; 
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  flex-shrink: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition fluide */
+}
+
+.img-crop-circles img:hover {
+  transform: scale(1.1); /* Agrandit légèrement l'image */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5); /* Accentue l'ombre */
 }
 
 .img-crop-circles::-webkit-scrollbar {
@@ -27,4 +39,61 @@
 
 .img-crop-circles::-webkit-scrollbar-track {
   background-color: #333;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Conteneur pour chaque image */
+.image-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+/* Style des images */
+.image-container img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.image-container img:hover {
+  transform: scale(1.1); /* Zoom sur l'image */
+  filter: brightness(0.7); /* Assombrit légèrement l'image */
+}
+
+/* Overlay pour le texte */
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 10px;
+  transition: opacity 0.3s ease; /* Transition fluide pour l'apparition */
+}
+
+/* Afficher le texte uniquement au survol de l'image */
+.image-container:hover .image-overlay {
+  opacity: 1;
 }

@@ -3,7 +3,7 @@
 
 .typesApparitions {
     padding: 2rem 1rem;
-    background-color: #121212;
+    background-color: #0a0a0a;
     color: white;
     overflow-x: hidden;
     display: flex;
@@ -40,14 +40,14 @@
   }
   
   .apparition-card h3 {
-    font-family: 'Inter', sans-serif; /* s'assure qu'elle utilise bien la police importée */
+    font-family: Orbitron, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;    
     margin-top: 0.5rem;
     font-size: 1.2rem;
     color: #13c287;
   }
   
   .apparition-card p {
-    font-family: 'Inter', sans-serif; /* s'assure qu'elle utilise bien la police importée */
+    font-family: Orbitron, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;    
     font-size: 0.95rem;
     line-height: 1.4;
   }

@@ -115,6 +115,7 @@ export default function UFOTypeGraph() {
       tooltip
         .attr("x", 10)
         .attr("y", 20)
+        .style("font-family", "Orbitron, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif") // Ajout de la police
         .text(`En ${year}`)
         .append("tspan")
         .attr("x", 10)
