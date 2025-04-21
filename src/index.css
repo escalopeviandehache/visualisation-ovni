@@ -140,7 +140,13 @@ footer {
     outline: none;
 }
 
-
+.spawnByYear-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+}
 
 .leaflet-popup-content-wrapper, .leaflet-popup-tip{  
   background-color: rgba(0, 0, 0, 0.8);
@@ -172,6 +178,30 @@ footer {
   border-radius: 12px;
 }
 
+.spawnByYear-img {
+  max-width: 100%; /* L'image occupe toute la largeur disponible */
+  height: auto;    /* Maintient les proportions de l'image */
+  display: block;  /* Évite les espaces blancs sous l'image */
+  margin: 0 auto 20px; /* Centre l'image et ajoute un espace en bas */
+  cursor: pointer; /* Change le curseur pour indiquer que l'image est cliquable */
+  border-radius: 10px; /* Ajoute des coins arrondis (optionnel) */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ajoute une ombre (optionnel) */
+}
+
+.spawnByYear-img:hover {
+  transform: scale(1.05); /* Agrandit légèrement l'image au survol */
+  transition: transform 0.3s ease; /* Animation fluide */
+}
+
+#spawnByYearImg-clickable{
+  max-width: 750px; 
+  height: auto;    /* Maintient les proportions de l'image */
+  display: block;  /* Évite les espaces blancs sous l'image */
+  margin: 0 auto 20px; /* Centre l'image et ajoute un espace en bas */
+  cursor: pointer; /* Change le curseur pour indiquer que l'image est cliquable */
+  border-radius: 10px; /* Ajoute des coins arrondis (optionnel) */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 #spawnByYear_button {
   background-color: #3f3f3f;
   color: white;
