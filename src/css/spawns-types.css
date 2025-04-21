@@ -3,7 +3,7 @@
 
 .typesApparitions {
     padding: 2rem 1rem;
-    background-color: #0a0a0a;
+    /* background-color: #0a0a0a; */
     color: white;
     overflow-x: hidden;
     display: flex;
@@ -43,7 +43,7 @@
     font-family: Orbitron, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;    
     margin-top: 0.5rem;
     font-size: 1.2rem;
-    color: #13c287;
+    color: rgb(39, 251, 107);
   }
   
   .apparition-card p {

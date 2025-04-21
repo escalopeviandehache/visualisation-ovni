@@ -6,6 +6,7 @@ import '/js/section/testimony-section.js';
 import '/js/section/slider-evolution.js';
 import '/js/section/movie-details-section.js';
 import '/js/section/crop-circles.js';
+import '/js/section/intro.js';
 
 
   const slider = document.querySelector('.slider-container1');

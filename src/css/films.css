@@ -77,7 +77,7 @@
     transform: translate(-50%, -50%);
     margin-top: 100px;
     margin-bottom: -50px;
-    background-color: rgba(0, 0, 0, 0.7); /* Fond semi-transparent pour améliorer la lisibilité */
+    /* background-color: rgba(0, 0, 0, 0.7); Fond semi-transparent pour améliorer la lisibilité */
     color: #ffffff;
     padding: 1rem;
     border-radius: 8px;
