@@ -1,0 +1,72 @@
+.custom-popup {
+    width: 100%; /* Le popup occupe toute la largeur du conteneur */
+    max-height: 90vh; /* Limiter la hauteur à 90% de la hauteur de l'écran */
+    overflow-y: auto; /* Ajouter un défilement vertical si le contenu dépasse */
+    color: white;
+}
+
+.custom-popup .popup-image-overlay {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.custom-popup .popup-title-top-left {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    color: rgb(39, 251, 107);
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px rgba(39, 251, 107, 0.7);
+}
+
+.custom-popup img {
+    width: 50%;       /* Réduire la largeur de l'image à 50% du conteneur */
+    height: auto;     /* Maintenir les proportions de l'image */
+    border-radius: 8px;
+    object-fit: cover; /* Ajuster l'image pour qu'elle s'adapte au conteneur */
+    display: block;   /* Centrer l'image */
+    margin: 0 auto;   /* Ajouter un centrage horizontal */
+}
+
+#popup-container {
+    position: fixed; /* Position fixe pour rester visible même lors du défilement */
+    top: 50%;        /* Centrer verticalement */
+    left: 50%;       /* Centrer horizontalement */
+    transform: translate(-50%, -50%); /* Ajuster pour centrer */
+    z-index: 10000;  /* Assurer que le popup est au-dessus de tout */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;      /* Largeur du conteneur */
+    max-width: 1200px; /* Largeur maximale */
+    max-height: 90vh; /* Limiter la hauteur à 90% de la hauteur de l'écran */
+    overflow-y: auto; /* Ajouter un défilement vertical si le contenu dépasse */
+    background-color: rgba(0, 0, 0, 0.9); /* Fond sombre */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+#popup-container.hidden {
+    display: none; /* Masquer le popup par défaut */
+}
+
+.close-popup-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+}
+
+.close-popup-button:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
