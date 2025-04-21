@@ -102,9 +102,14 @@ section {
 }
 
 footer {
-    background-color: #1a1a1a;
-    padding: 10px;
-    font-size: 14px;
+  background-color: rgb(17, 24, 39); 
+  color: white;
+  text-align: center;    
+  padding: 10px;
+  font-size: 14px;
+  border-style: solid;
+  border-color: rgb(12, 17, 28);
+  border-width: 0.2px 0px 0px 0px;
 }
 
 #heatmap-usa {
