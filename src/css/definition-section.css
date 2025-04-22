@@ -3,10 +3,11 @@
     font-size: 22px; /* Taille du texte ajustable */
     white-space: normal; /* Permet d'afficher tout le texte */
     overflow: visible; /* Assure que tout le texte est visible */
-    width: 100%; /* Prendre toute la largeur disponible */
+    width: 99%; /* Prendre toute la largeur disponible */
     text-align: center; /* Centrer le texte horizontalement */
     margin-top: 10px; /* Réduction de l'espacement au-dessus du texte */
     padding: 8px; /* Espacement intérieur légèrement réduit */
+    align-items: center;
 }
 
 @keyframes typing {
