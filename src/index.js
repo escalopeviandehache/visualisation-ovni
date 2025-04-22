@@ -9,20 +9,5 @@ import '/js/section/crop-circles.js';
 import '/js/section/intro.js';
 
 
-  const slider = document.querySelector('.slider-container1');
-  const btnPrev = document.querySelector('.prev-slide');
-  const btnNext = document.querySelector('.next-slide');
 
-  btnPrev.addEventListener('click', () => {
-    slider.scrollBy({
-      left: -slider.offsetWidth * 0.9,
-      behavior: 'smooth'
-    });
-  });
-
-  btnNext.addEventListener('click', () => {
-    slider.scrollBy({
-      left: slider.offsetWidth * 0.9,
-      behavior: 'smooth'
-    });
-  });
+  
