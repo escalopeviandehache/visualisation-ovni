@@ -115,12 +115,41 @@ export default function UFOTypeGraph() {
       tooltip
         .attr("x", 10)
         .attr("y", 20)
-        .style("font-family", "Orbitron, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif") // Ajout de la police
-        .text(`En ${year}`)
-        .append("tspan")
+        .style("font-family", "Orbitron, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif")
+        .style("fill", "#e5f5e0")  // texte par défaut
+        .text(null)                // effacer le texte précédent
+        .selectAll("tspan").remove();
+
+      // reconstruire le tooltip sur une ligne
+      tooltip
         .attr("x", 10)
-        .attr("dy", "1.2em")
-        .text(`${value} ovnis de type ${shapeTranslations[d.key]}`);
+        .attr("y", 20)
+        .style("font-family", "Orbitron, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif")
+        .style("fill", "#ffffff")  // texte par défaut
+        .text(null)                // effacer le texte précédent
+        .selectAll("tspan").remove();
+
+      tooltip.append("tspan")
+        .attr("x", 10)
+        .text("En ");
+      tooltip.append("tspan")
+        .style("fill", greenShades(d.key))
+        .text(year);
+      tooltip.append("tspan")
+        .style("fill", "#ffffff")
+        .text(", il y a eu ");
+      tooltip.append("tspan")
+        .style("fill", greenShades(d.key))
+        .text(value);
+      tooltip.append("tspan")
+        .style("fill", "#ffffff")
+        .text(" ovnis de type ");
+      tooltip.append("tspan")
+        .style("fill", greenShades(d.key))
+        .text(shapeTranslations[d.key]);
+      tooltip.append("tspan")
+        .style("fill", "#ffffff")
+        .text(".");
     })
     .on("mouseleave", function () {
       d3.selectAll(".myArea").style("opacity", 1);
