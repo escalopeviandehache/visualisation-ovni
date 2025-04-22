@@ -164,7 +164,7 @@ export default function UFOTypeGraph() {
         d3.axisBottom(x)
           .ticks(10)
           .tickFormat(d3.format("d"))
-          .tickSize(-height)  // étend les ticks sur toute la hauteur
+          // .tickSize(-height)  // étend les ticks sur toute la hauteur
       )
       .style("font-family", "Orbitron, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif");
 
@@ -172,15 +172,16 @@ export default function UFOTypeGraph() {
   xAxisG.select(".domain").remove();
 
   // style des lignes de graduation (verticales)
-  xAxisG.selectAll(".tick line")
-      .attr("stroke", "rgb(255, 255, 255)")
-      .attr("stroke-dasharray", "4 4")
-      .attr("stroke-width", "0.25");
+  // xAxisG.selectAll(".tick line")
+  //     .attr("stroke", "rgb(255, 255, 255)")
+  //     .attr("stroke-dasharray", "4 4")
+  //     .attr("stroke-width", "0.25")
+  //     .lower(); // Met les lignes en arrière-plan
 
-  svg.append("text")
-    .attr("x", width)
-    .attr("y", height + 25)
-    .style("text-anchor", "end")
+  // svg.append("text")
+  //   .attr("x", width)
+  //   .attr("y", height + 25)
+  //   .style("text-anchor", "end")
     
     // .text("Time (year)");
 }
