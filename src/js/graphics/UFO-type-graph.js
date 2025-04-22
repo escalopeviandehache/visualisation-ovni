@@ -71,6 +71,7 @@ export default function UFOTypeGraph() {
     .style("font-size", "16px")
     .style("fill", "#13c287")
     .style("font-weight", "bold");
+    
 
   const greenShades = d3.scaleOrdinal()
     .domain(shapesToKeep)
@@ -156,14 +157,30 @@ export default function UFOTypeGraph() {
       tooltip.style("opacity", 0);
     });
 
-  svg.append("g")
-    .attr("transform", `translate(0, ${height})`)
-    .call(d3.axisBottom(x).ticks(10).tickFormat(d3.format("d")))
-    .select(".domain").remove();
+  // axe des années avec traits verticaux en dash
+  const xAxisG = svg.append("g")
+      .attr("transform", `translate(0, ${height})`)
+      .call(
+        d3.axisBottom(x)
+          .ticks(10)
+          .tickFormat(d3.format("d"))
+          .tickSize(-height)  // étend les ticks sur toute la hauteur
+      )
+      .style("font-family", "Orbitron, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif");
+
+  // supprimer la ligne de base
+  xAxisG.select(".domain").remove();
+
+  // style des lignes de graduation (verticales)
+  xAxisG.selectAll(".tick line")
+      .attr("stroke", "rgb(255, 255, 255)")
+      .attr("stroke-dasharray", "4 4")
+      .attr("stroke-width", "0.25");
 
   svg.append("text")
     .attr("x", width)
     .attr("y", height + 25)
     .style("text-anchor", "end")
+    
     // .text("Time (year)");
 }

@@ -162,38 +162,6 @@ footer {
   margin-top: 20px;
 }
 
-/* .leaflet-popup-content-wrapper, .leaflet-popup-tip{  
-  background-color: rgba(0, 0, 0, 0.8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  width: 100%;
-}
-
-.custom-popup .popup-image-overlay {
-  position: relative;
-}
-
-.custom-popup .popup-title-top-left {
-  font-family: DeliriumNcV;
-  position: absolute;
-  top: 10px;
-  left: 80px;
-  color: rgb(1, 99, 43);
-  padding: 10px;
-  font-size: 3.5rem;
-  border-radius: 8px;
-}
-
-.custom-popup img {
-  width: 100%;       
-  height: auto;     
-  max-height: 600px; 
-  border-radius: 12px;
-  object-fit: cover; 
-} */
-
 .spawnByYear-img {
   max-width: 100%; /* L'image occupe toute la largeur disponible */
   height: auto;    /* Maintient les proportions de l'image */
