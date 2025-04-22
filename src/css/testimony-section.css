@@ -11,6 +11,11 @@
   flex: 0 0 100%;          /* chaque section fait 100% de la largeur du viewport */
   box-sizing: border-box;
   /* si tu veux un petit padding ou marge, ok, mais pense à ajuster le end() en JS */
+  position: relative;
+  overflow: hidden; /* Cache tout débordement des images */
+  width: 100%; /* Assure que le conteneur occupe toute la largeur disponible */
+  height: auto; /* Ajuste la hauteur automatiquement */
+  border-radius: 12px; /* Ajoute des coins arrondis */
 }
 
 .testimony-section-wrapper {
@@ -35,6 +40,14 @@
     border: 1px solid #27fb6b;
     box-shadow: 0 0 30px rgba(39, 251, 107, 0.2);
   }
+
+.testimony-section img {
+    max-width: 100%; /* L'image ne dépasse pas la largeur de son conteneur */
+    max-height: 100%; /* L'image ne dépasse pas la hauteur de son conteneur */
+    object-fit: cover; /* Ajuste l'image pour qu'elle s'adapte au conteneur sans déformation */
+    border-radius: 12px; /* Ajoute des coins arrondis pour un meilleur style */
+    display: block; /* Évite les espaces blancs sous l'image */
+}
 
 /* optionnel : si ton body n’est pas assez long, force-le à être scrolable */
 body {
@@ -83,7 +96,6 @@ body {
   border-radius: 12px;
 }
 
-/* Deuxième slide : Texte explicatif centré en haut de l'image */
 #slide-2 .testimony-background-content {
   position: relative;
   text-align: center;
@@ -170,4 +182,14 @@ blockquote {
 
 #slide-3 .testimony-link:hover {
   background-color: #595959;
+}
+
+#slide-1 img,
+#slide-2 img,
+#slide-3 img {
+    max-width: 100%; /* L'image ne dépasse pas la largeur de son conteneur */
+    max-height: 100%; /* L'image ne dépasse pas la hauteur de son conteneur */
+    object-fit: cover; /* Ajuste l'image pour qu'elle s'adapte au conteneur sans déformation */
+    border-radius: 12px; /* Ajoute des coins arrondis */
+    display: block; /* Évite les espaces blancs sous l'image */
 }

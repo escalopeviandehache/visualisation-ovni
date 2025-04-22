@@ -213,3 +213,7 @@ footer {
     overflow: hidden; /* Désactive le défilement vertical */
     height: 100vh;    /* Empêche le contenu de dépasser la hauteur de l'écran */
 }
+
+.aides-user{
+  color: rgb(186, 186, 186);
+}
