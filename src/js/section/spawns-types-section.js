@@ -1,9 +1,9 @@
 gsap.registerPlugin(ScrollTrigger);
 
-const sections = gsap.utils.toArray(".apparition-card");
+const sections2 = gsap.utils.toArray(".apparition-card");
 
-gsap.to(sections, {
-  xPercent: -100 * (sections.length - 0.5),
+gsap.to(sections2, {
+  xPercent: -100 * (sections2.length - 0.5),
   ease: "none",
   scrollTrigger: {
     trigger: ".horizontal-scroll-container",
