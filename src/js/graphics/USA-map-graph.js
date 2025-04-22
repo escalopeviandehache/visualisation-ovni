@@ -162,21 +162,26 @@ export default function initializeUSAMap() {
     zone51Marker.on('click', function () {
         const popupContent = `
             <button class="close-popup-button">X</button>
-            <div class="popup-image-overlay">
-                <h3 class="popup-title-top-left">Zone 51</h3>
-                <img src="../../img/spawns-types/area51.webp" alt="Zone 51" />
+            <div class="popup-content">
+                <div class="popup-top">
+                    <div class="popup-image">
+                        <img src="../../img/spawns-types/area51.webp" alt="Zone 51" /><br>
+                        <img src="../../img/alienZone51.jpg" alt="Zone 51" />
+                    </div>
+                    <div class="popup-text">
+                        <h3 id="titre-popup">Zone 51</h3>
+                        <p><strong>Location:</strong> Nevada <br><strong>Coordinates:</strong> 37.25436354487456, -115.78680345914648</p>
+                        
+                        <p>
+                            La Zone 51 est une base militaire ultra-secrète située dans le désert du Nevada, aux États-Unis. Officiellement, il s'agit d'un site d'essais pour des avions et des technologies militaires avancés, mais son existence même est longtemps restée classifiée par le gouvernement américain. Son aura de mystère et son accès strictement interdit ont alimenté de nombreuses théories du complot, notamment sur la présence d'ovnis et de technologies extraterrestres.
+                        </p>
+                        <p>
+                            Officiellement, la Zone 51 n’est qu’un site de développement militaire avancé. Officieusement, elle continue d'alimenter les fantasmes sur la vie extraterrestre et les complots gouvernementaux. <strong id="text-vert">Vérité cachée ou simple légende urbaine ? Le mystère demeure...</strong>
+                        </p>
+                    </div>
+                </div>
             </div>
-            <p><strong>Location:</strong> Nevada</p>
-            <p><strong>Coordinates:</strong> 37.25436354487456, -115.78680345914648</p>
-            <p><strong>Description:</strong><br>
-                La Zone 51 est une base militaire ultra-secrète située dans le désert du Nevada, aux États-Unis. Officiellement, il s'agit d'un site d'essais pour des avions et des technologies militaires avancés, mais son existence même est longtemps restée classifiée par le gouvernement américain. Son aura de mystère et son accès strictement interdit ont alimenté de nombreuses théories du complot, notamment sur la présence d'ovnis et de technologies extraterrestres.<br><br>
-                L’association entre la Zone 51 et les extraterrestres remonte aux années 1950 et 1960, en pleine guerre froide, lorsque des témoins ont signalé avoir vu des objets volants non identifiés dans le ciel. En réalité, ces observations étaient souvent liées aux tests d'avions espions comme l'U-2 ou le SR-71 Blackbird, mais la culture populaire s’est rapidement emparée du mythe. L’affaire Roswell a renforcé cette réputation : certains pensent que les débris et les corps supposément extraterrestres récupérés en 1947 y ont été analysés.<br><br>
-                Officiellement, la Zone 51 n’est qu’un site de développement militaire avancé. Officieusement, elle continue d'alimenter les fantasmes sur la vie extraterrestre et les complots gouvernementaux. Vérité cachée ou simple légende urbaine ? Le mystère demeure.
-            </p>
         `;
-
-        // Sauvegarder la position actuelle de défilement
-        const scrollY = window.scrollY;
 
         // Injecter le contenu dans le conteneur HTML
         const popupContainer = document.getElementById('popup-container');
@@ -186,6 +191,7 @@ export default function initializeUSAMap() {
         popupContainer.classList.remove('hidden');
 
         // Désactiver le défilement du reste du site tout en conservant la position
+        const scrollY = window.scrollY;
         document.body.style.position = 'fixed';
         document.body.style.top = `-${scrollY}px`;
         document.body.classList.add('no-scroll');
@@ -198,7 +204,7 @@ export default function initializeUSAMap() {
             document.body.style.position = '';
             document.body.style.top = '';
             document.body.classList.remove('no-scroll');
-            window.scrollTo(0, scrollY); // Restaurer la position de défilement
+            window.scrollTo(0, scrollY);
         });
     });
 

@@ -40,7 +40,7 @@
     max-width: 1200px; /* Largeur maximale */
     max-height: 90vh; /* Limiter la hauteur à 90% de la hauteur de l'écran */
     overflow-y: auto; /* Ajouter un défilement vertical si le contenu dépasse */
-    background-color: rgba(0, 0, 0, 0.9); /* Fond sombre */
+    background-color: rgba(10, 14, 23, 0.8); /* Fond sombre */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
@@ -69,4 +69,49 @@
 
 .close-popup-button:hover {
     background-color: rgba(255, 255, 255, 1);
+}
+
+.popup-content {
+    display: flex;
+    flex-direction: column; /* Organiser le contenu en colonne */
+    gap: 20px; /* Ajouter un espace entre les sections */
+}
+
+.popup-top {
+    display: flex; /* Disposer l'image et le texte côte à côte */
+    gap: 20px; /* Ajouter un espace entre l'image et le texte */
+    align-items: flex-start; /* Aligner les éléments en haut */
+}
+
+.popup-image {
+    flex: 1; /* L'image occupe 1 part de l'espace disponible */
+    max-width: 40%; /* Limiter la largeur de l'image */
+}
+
+.popup-image img {
+    width: 100%; /* L'image occupe toute la largeur de son conteneur */
+    height: auto; /* Maintenir les proportions de l'image */
+    border-radius: 8px; /* Ajouter des coins arrondis */
+    object-fit: cover; /* Ajuster l'image pour qu'elle s'adapte au conteneur */
+}
+
+.popup-text {
+    flex: 2; /* Le texte occupe 2 parts de l'espace disponible */
+    color: white;
+    overflow-y: auto; /* Ajouter un défilement si le texte dépasse */
+}
+
+.popup-bottom {
+    text-align: center; /* Centrer le contenu en dessous */
+    color: white;
+}
+
+#titre-popup{
+    color: rgb(39, 251, 107);
+    text-shadow: 0 0 15px rgba(39, 251, 107, 0.7);
+}
+
+#text-vert{
+    color: rgb(39, 251, 107);
+    text-shadow: 0 0 15px rgba(39, 251, 107, 0.7); 
 }
