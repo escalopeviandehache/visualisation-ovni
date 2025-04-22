@@ -35,10 +35,10 @@
 
 gsap.registerPlugin(ScrollTrigger);
 
-const sections = gsap.utils.toArray(".evolution-section");
+const sections1 = gsap.utils.toArray(".evolution-section");
 
-gsap.to(sections, {
-  xPercent: -100 * (sections.length - 0.5),
+gsap.to(sections1, {
+  xPercent: -100 * (sections1.length - 0.5),
   ease: "none",
   scrollTrigger: {
     trigger: ".evolution-section-wrapper",
