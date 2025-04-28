@@ -203,9 +203,15 @@ export default function initializeUSAMap() {
                     <div class="popup-text">
                         <h3 id="titre-popup">Zone 51</h3>
                         <p><strong>Location:</strong> Nevada <br><strong>Coordinates:</strong> 37.25436354487456, -115.78680345914648</p>
-                        <p>La Zone 51 est une base militaire ultra-secrète située dans le désert du Nevada. Connue pour ses théories sur les ovnis et les extraterrestres.</p>
-                        <p><strong id="text-vert">Vérité cachée ou simple légende urbaine ? Le mystère demeure...</strong></p>
-                    </div>
+                         <p>
+                            La Zone 51 est une base militaire ultra-secrète située dans le désert du Nevada, aux États-Unis. Officiellement, il s'agit d'un site d'essais pour des avions et des technologies militaires avancés, mais son existence même est longtemps restée classifiée par le gouvernement américain. Son aura de mystère et son accès strictement interdit ont alimenté de nombreuses théories du complot, notamment sur la présence d'ovnis et de technologies extraterrestres.
+                        </p>
+                        <p>
+                            Officiellement, la Zone 51 n’est qu’un site de développement militaire avancé. Officieusement, elle continue d'alimenter les fantasmes sur la vie extraterrestre et les complots gouvernementaux. 
+                        </p>
+                        <p>
+                            <strong id="text-vert">Vérité cachée ou simple légende urbaine ? Le mystère demeure...</strong>                        
+                        </p>
                 </div>
             </div>
         `;

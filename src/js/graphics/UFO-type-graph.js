@@ -184,4 +184,4 @@ export default function UFOTypeGraph() {
   //   .style("text-anchor", "end")
     
     // .text("Time (year)");
-}
+  }
