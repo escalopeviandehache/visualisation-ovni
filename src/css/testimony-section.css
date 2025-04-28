@@ -20,11 +20,8 @@
 
 .testimony-section-wrapper {
     display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
+    overflow-x: hidden;
     gap: 1.5rem;
-    scrollbar-color: #13c287 #222;
   }
   
   /* remplace chaque slide */
