@@ -17,7 +17,7 @@
   position: relative;
   overflow: hidden; /* Cache tout débordement des images */
   width: 100%; /* Assure que le conteneur occupe toute la largeur disponible */
-  height: auto; /* Ajuste la hauteur automatiquement */
+  height: 70vh; /* Ajuste la hauteur automatiquement */
   border-radius: 12px; /* Ajoute des coins arrondis */
   align-items: center;
 }
