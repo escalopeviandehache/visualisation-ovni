@@ -65,7 +65,7 @@ body {
   scrollbar-color: #13c287 #222;
 }
 
-.testimony-slide {
+.testimony-slider {
   flex: 0 0 90%;
   scroll-snap-align: start;
   background-color: #1a1a1a;
