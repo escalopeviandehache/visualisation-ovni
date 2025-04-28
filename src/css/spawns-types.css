@@ -6,6 +6,8 @@
   overflow-x: hidden;        /* pour cacher le débordement horizontal */
   width: 100%;             /* prend toute la largeur de la fenêtre */
   height: 50vh;           /* hauteur plein écran pour permettre le scroll */
+  gap: 1.5rem;
+
 }
 
 .apparition-card {
@@ -17,12 +19,13 @@
   width: 100%; /* Assure que le conteneur occupe toute la largeur disponible */
   height: auto; /* Ajuste la hauteur automatiquement */
   border-radius: 12px; /* Ajoute des coins arrondis */
+  align-items: center;
 }
 
   
   /* remplace chaque slide */
   .apparition-card {
-    flex: 0 0 90%;
+    flex: 0 0 40%;
     scroll-snap-align: start;
     background-color: rgba(10, 14, 23, 0.8);
     border-radius: 16px;
@@ -32,9 +35,7 @@
     border-radius: 10px;
     border: 1px solid #27fb6b;
     box-shadow: 0 0 30px rgba(39, 251, 107, 0.2);
-    width: 50%;
-    
-
+    width: 50%;    
   }
 
 .apparition-card img {
@@ -42,7 +43,9 @@
     max-height: 100%; /* L'image ne dépasse pas la hauteur de son conteneur */
     object-fit: cover; /* Ajuste l'image pour qu'elle s'adapte au conteneur sans déformation */
     border-radius: 12px; /* Ajoute des coins arrondis pour un meilleur style */
-    display: block; /* Évite les espaces blancs sous l'image */
+    display: inline-block; /* Évite les espaces blancs sous l'image */
+    align-items: center;
+
 }
 
 /* optionnel : si ton body n’est pas assez long, force-le à être scrolable */
@@ -71,7 +74,8 @@ body {
     margin-top: 0.5rem;
     font-size: 1.2rem;
     color: rgb(39, 251, 107);
-    width: 50%;
+    align-items: center;
+
 
   }
   
@@ -79,7 +83,8 @@ body {
     font-family: Orbitron, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;    
     font-size: 0.95rem;
     line-height: 1.4;
-    width: 50%;
+    align-items: center;
+
 
   }
   
@@ -89,7 +94,7 @@ body {
     object-fit: cover;
     border-radius: 8px;
     margin-bottom: 0.8rem;
-    width: 50%;
+    align-items: center;
 
   }
   
