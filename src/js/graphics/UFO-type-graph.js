@@ -171,6 +171,45 @@ export default function UFOTypeGraph() {
   // supprimer la ligne de base
   xAxisG.select(".domain").remove();
 
+  // ajouter une légende en dessous de l'axe
+  // créer dynamiquement la légende dans le div à part
+const legendContainer = d3.select("#ufo-type-legend")
+  .style("display", "flex")
+  .style("flex-wrap", "wrap")
+  .style("gap", "15px")
+  .style("margin-top", "20px")
+  .style("justify-content", "center")
+  .style("text-align", "center");
+
+shapesToKeep.forEach(shape => {
+const item = legendContainer.append("div")
+  .style("display", "flex")
+  .style("align-items", "center")
+  .style("gap", "5px");
+
+item.append("div")
+  .style("width", "20px")
+  .style("height", "20px")
+  .style("background-color", greenShades(shape));
+
+const translations = {
+  light: "lumière",
+  cylinder: "cylindre",
+  triangle: "triangle",
+  sphere: "sphère",
+  cigar: "cigare",
+  disk: "disque",
+  fireball: "boule de feu",
+  unknown: "inconnu"
+};
+
+item.append("span")
+  .text(translations[shape])
+  .style("color", "#ffffff")
+  .style("font-family", "Orbitron, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif")
+  .style("font-size", "12px");
+});
+
   // style des lignes de graduation (verticales)
   // xAxisG.selectAll(".tick line")
   //     .attr("stroke", "rgb(255, 255, 255)")
@@ -184,4 +223,8 @@ export default function UFOTypeGraph() {
   //   .style("text-anchor", "end")
     
     // .text("Time (year)");
+  
+  
+  
+  
   }
