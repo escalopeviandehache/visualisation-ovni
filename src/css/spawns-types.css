@@ -19,14 +19,6 @@
   border-radius: 12px; /* Ajoute des coins arrondis */
 }
 
-.horizontal-scroll-container {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    gap: 1.5rem;
-    scrollbar-color: #13c287 #222;
-  }
   
   /* remplace chaque slide */
   .apparition-card {
