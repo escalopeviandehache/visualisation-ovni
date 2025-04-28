@@ -5,7 +5,7 @@
   display: flex;
   overflow-x: hidden;        /* pour cacher le débordement horizontal */
   width: 100%;             /* prend toute la largeur de la fenêtre */
-  height: 50vh;           /* hauteur plein écran pour permettre le scroll */
+  height: 70vh;           /* hauteur plein écran pour permettre le scroll */
   gap: 1.5rem;
 
 }
@@ -45,6 +45,8 @@
     border-radius: 12px; /* Ajoute des coins arrondis pour un meilleur style */
     display: inline-block; /* Évite les espaces blancs sous l'image */
     align-items: center;
+    height: 300px;
+    width: 600px;
 
 }
 
