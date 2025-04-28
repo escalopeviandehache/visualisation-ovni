@@ -103,7 +103,7 @@ body {
 }
 
 #slide-2 img {
-  width: auto;
+  width: 100%;
   height: 700px;
   border-radius: 12px;
   align-items: center;
