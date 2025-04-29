@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap');
+
+
 body {
     font-family: Arial, sans-serif;
     max-width: 1200px;
@@ -46,13 +50,13 @@ body {
     font-size: 2.5rem;
     margin: 0 0 5px 0;
     color: #4caf50; /* Couleur verte comme dans l'image */
-    font-family: 'Courier New', monospace;
+    font-family: Orbitron, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;    
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
 .film-year-director {
-    font-family: 'Courier New', monospace;
+    font-family: Orbitron, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;    
     margin-bottom: 25px;
     color: #141414;
 }
